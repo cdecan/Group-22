@@ -42,9 +42,9 @@ Student Number:
 
 Team Member #2:
 
-Name:
+Name: Connor Decan
 
-Student Number:	
+Student Number:	20222394
 
 
 Team Member #3:
