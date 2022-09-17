@@ -56,6 +56,6 @@ Student Number:	20238130
 
 Team Member #4:
 
-Name:
+Name: Kennan Bays
 
-Student Number:	
+Student Number:	20167866
