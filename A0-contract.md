@@ -49,9 +49,9 @@ Student Number:
 
 Team Member #3:
 
-Name: Allen Geng
+Name: 
 
-Student Number:	20238130
+Student Number:	
 
 
 Team Member #4:
