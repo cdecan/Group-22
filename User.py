@@ -1,53 +1,26 @@
-class User:
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+# setting up SQLAlchemy and data models so we can map data models into database tables
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+db = SQLAlchemy(app)
+
+
+class User(db.Model):
     """
-    This class consists of all the user info and methods about balances
+    Contains info about the user data
     """
-    def __init__(self, name, balance, bank_info, user_id=-1, transactions=[], reviews=[], listings=[]):
-        """This function initializes the user data"""
-        self.name = name
-        self.balance = balance
-        self.bank_info = bank_info
-        self.user_id = user_id
-        self.transactions = transactions
-        self.reviews = reviews
-        self.listings = listings
+    # Basic user info
+    user_id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    banking_info = db.Column(db.String(120), unique=True)
+    balance = db.Column(db.Integer, primary_key=True)
+    # Histories stored as PickleType
+    transactions = db.Column(db.PickleType('Transaction'), mutable=True)
+    listings = db.Column(db.PickleType('Listing'), mutable=True)
+    reviews = db.Column(db.PickleType('Review'), mutable=True)
 
-    def add_transaction(self, Transaction):
-        """This function adds a transaction to the list of transactions"""
-        self.transactions.append(Transaction)
-
-    def add_review(self, Review):
-        """This function adds a review to the list of reviews"""
-        self.reviews.append(Review)
-
-    def add_listing(self, Listing):
-        """This function adds a listing to the list of listing"""
-        self.listings.append(Listing)
-
-    def set_user_id(self, user_id):
-        """This function sets the user id to a specific id"""
-        self.user_id = user_id
-
-    def get_id(self):
-        """This function returns the user id"""
-        return self.user_id
-
-    def get_balance(self):
-        """This function returns the balance of the user"""
-        return self.balance
-
-    def get_bank_info(self):
-        """This function returns the banking info of the user"""
-        return self.bank_info
-
-    def get_transaction_history(self):
-        """This function returns the transactions of the user as a list"""
-        return self.transactions
-
-    def get_review_history(self):
-        """This function returns the reviews from the user as a list"""
-        return self.reviews
-
-    def get_listing_history(self):
-        """This function returns the listings from the user as a list"""
-        return self.listings
+    def __repr__(self):
+        return '<User %r>' % self.username
