@@ -15,12 +15,12 @@ class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    banking_info = db.Column(db.String(120), unique=True)
+    banking_info = db.Column(db.String(120), unique=True, nullable=True)
     balance = db.Column(db.Integer, primary_key=True)
     # Histories stored as PickleType
-    transactions = db.Column(db.PickleType('Transaction'), mutable=True)
-    listings = db.Column(db.PickleType('Listing'), mutable=True)
-    reviews = db.Column(db.PickleType('Review'), mutable=True)
+    transactions = db.Column(db.PickleType(mutable=True), nullable=True)
+    listings = db.Column(db.PickleType(mutable=True), nullable=True)
+    reviews = db.Column(db.PickleType(mutable=True), nullable=True)
 
     def __repr__(self):
         return '<User %r>' % self.username
