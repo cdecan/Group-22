@@ -19,13 +19,12 @@ class Listing(db.Model):
                               uselist=False, lazy=True)
     # basic info about the property to be shown to the user
     address = db.Column(db.String(120), unique=True, nullable=False)
-    price = db.Column(db.Integer, primary_key=True, nullable=False)
-    number_of_guests = db.Column(db.Integer, primary_key=True, nullable=False)
-    number_of_beds = db.Column(db.Integer, primary_key=True, nullable=False)
-    number_of_bathrooms = db.Column(db.Integer, primary_key=True,
-                                    nullable=False)
-    list_date = db.Column(db.Date, primary_key=True, nullable=False)
-    availability = db.Column(db.Boolean, primary_key=True, nullable=False)
+    price = db.Column(db.Integer, nullable=False)
+    number_of_guests = db.Column(db.Integer, nullable=False)
+    number_of_beds = db.Column(db.Integer, nullable=False)
+    number_of_bathrooms = db.Column(db.Integer, nullable=False)
+    list_date = db.Column(db.Date, nullable=False)
+    availability = db.Column(db.Boolean, nullable=False)
     # a listing can contain many reviews
     reviews = db.relationship('Review', backref='listing', lazy=True)
 
