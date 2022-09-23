@@ -9,6 +9,9 @@ db = SQLAlchemy(app)
 
 
 class Review(db.Model):
+    """
+    Contains information about a listing review.
+    """
     # Unique ID for this review
     id = db.Column(db.Integer, primary_key=True)
     # Unique ID for user who authored review
