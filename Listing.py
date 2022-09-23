@@ -14,7 +14,7 @@ class Listing(db.Model):
     Contains information about the property listings
     """
     id = db.Column(db.Integer, primary_key=True)
-    # A review is posted by a user. Potentially nullable for anonymity.
+    # A review is posted by a user.
     creator = db.relationship('User', backref='listing',
                               uselist=False, lazy=True)
     # basic info about the property to be shown to the user
