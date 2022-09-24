@@ -18,7 +18,7 @@ class Transaction(db.Model):
     # ID of the user renting the property.
     id_renter = db.Column(db.Integer, unique=True, nullable=False)
     # ID of the user listing their property to be rented.
-    id_lister = db.Column(db.Integer, unique=True, nullable=False)
+    id_owner = db.Column(db.Integer, unique=True, nullable=False)
     # Listing price
     listing_price = db.Column(db.Integer,
                               db.ForeignKey('Listing.price'), nullable=False)
