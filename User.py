@@ -25,4 +25,4 @@ class User(db.Model):
     reviews = db.Column(db.PickleType(mutable=True), nullable=True)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %s>' % self.user_id
