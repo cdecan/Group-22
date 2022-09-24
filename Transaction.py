@@ -9,6 +9,10 @@ db = SQLAlchemy(app)
 
 
 class Transaction(db.Model):
+    """
+    Contains information required to complete a transaction
+    between two users.
+    """
     # Transaction ID
     id = db.Column(db.Integer, unique=True, primary_key=True)
     # ID of the user renting the property.
