@@ -19,7 +19,7 @@ class Listing(db.Model):
                               uselist=False, lazy=True)
     # basic info about the property to be shown to the user
     address = db.Column(db.String(120), unique=True, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
     number_of_guests = db.Column(db.Integer, nullable=False)
     number_of_beds = db.Column(db.Integer, nullable=False)
     number_of_bathrooms = db.Column(db.Integer, nullable=False)
