@@ -19,9 +19,12 @@ class Transaction(db.Model):
     id_renter = db.Column(db.Integer, unique=True, nullable=False)
     # ID of the user listing their property to be rented.
     id_owner = db.Column(db.Integer, unique=True, nullable=False)
-    # Listing price
-    listing_price = db.Column(db.Integer,
-                              db.ForeignKey('Listing.price'), nullable=False)
+    # Listing price dollars
+    listing_price_dollars = db.Column(
+        db.Integer, db.ForeignKey('Listing.price_dollars'), nullable=False)
+    # Listing price cents
+    listing_price_cents = db.Column(
+        db.Integer, db.ForeignKey('Listing.price_cents'), nullable=False)
     # listing availability.
     listing_availability = db.Column(
         db.Boolean, db.ForeignKey('Listing.availability'), nullable=False)
