@@ -1,4 +1,4 @@
-from qbay import app
+from qbnb import app
 from flask_sqlalchemy import SQLAlchemy
 
 
