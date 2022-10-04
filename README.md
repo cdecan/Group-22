@@ -12,11 +12,15 @@ This folder contains the template for A2 (backend dev). Folder structure:
 │   └── workflows
 │       ├── pytest.yml       ======> CI settings for running test automatically (trigger test for commits/pull-requests)
 │       └── style_check.yml  ======> CI settings for checking PEP8 automatically (trigger test for commits/pull-requests)
-├── qbay                 ======> Application source code
+├── qbnb                 ======> Application source code
 │   ├── __init__.py      ======> Required for a python module (can be empty)
 │   ├── __main__.py      ======> Program entry point
-│   └── models.py        ======> Data models
-├── qbay_test            ======> Testing code
+│   ├── Listing.py      ======> Listing model
+│   ├── models.py      ======> program models
+│   ├── Review.py      ======> Review model
+│   ├── Booking.py      ======> Booking model
+│   └── User.py        ======> User model
+├── qbnb_test            ======> Testing code
 │   ├── __init__.py      ======> Required for a python module (can be empty)
 │   ├── conftest.py      ======> Code to run before/after all the testing
 │   └── test_models.py   ======> Testing code for models.py
