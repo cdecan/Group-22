@@ -13,16 +13,19 @@ class User(db.Model):
     Contains info about the user data
     """
     # Basic user info
-    user_id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    banking_info = db.Column(db.String(120), unique=True, nullable=True)
-    balance = db.Column(db.Integer, nullable=True)
-    # Histories stored as PickleType
+    password = db.Column(db.String(120), nullable=False)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    billing_address = db.Column(db.String(120), nullable=False)
+    postal_code = db.Column(db.String(120), nullable=False)
+    balance = db.Column(db.Integer, nullable=False)
+
     # possible removal in the next sprint
-    transactions = db.Column(db.PickleType(mutable=True), nullable=True)
-    listings = db.Column(db.PickleType(mutable=True), nullable=True)
-    reviews = db.Column(db.PickleType(mutable=True), nullable=True)
+
+    # bookings = db.relationship('Booking',backref='bookings',lazy=True)
+    # listings = db.relationship('Listing', backref='listings', lazy=True)
+    # reviews = db.relationship('Review', backre='reviews', lazy=True)f
 
     def __repr__(self):
-        return '<User %s>' % self.user_id
+        return '<User %s>' % self.id
