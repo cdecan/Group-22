@@ -1,4 +1,4 @@
-# qBay - Python-CI-2021 template
+# qbnb - Python-CI-2021 template
 
 [![Pytest-All](https://github.com/CISC-CMPE-327/Python-CI-2021/actions/workflows/pytest.yml/badge.svg)](https://github.com/CISC-CMPE-327/Python-CI-2021/actions/workflows/pytest.yml)
 [![Python PEP8](https://github.com/CISC-CMPE-327/Python-CI-2021/actions/workflows/style_check.yml/badge.svg)](https://github.com/CISC-CMPE-327/Python-CI-2021/actions/workflows/style_check.yml)
@@ -31,7 +31,7 @@ To run the application module (make sure you have a python environment of 3.5+)
 
 ```
 $ pip install -r requirements.txt
-$ python -m qbay
+$ python -m qbnb
 ```
 
 Currently it shows nothing since it is empty in the `__main__.py` file.
@@ -44,7 +44,7 @@ To run testing:
 flake8 --select=E .  
 
 # run all testing code 
-pytest -s qbay_test
+pytest -s qbnb_test
 
 ```
 
