@@ -25,7 +25,7 @@ class User(db.Model):
 
     # bookings = db.relationship('Booking',backref='bookings',lazy=True)
     # listings = db.relationship('Listing', backref='listings', lazy=True)
-    # reviews = db.relationship('Review', backre='reviews', lazy=True)f
+    # reviews = db.relationship('Review', backref='reviews', lazy=True)
 
     def __repr__(self):
         return '<User %s>' % self.id
