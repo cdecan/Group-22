@@ -1,5 +1,5 @@
 import os
-from qbay import app
+from qbnb import app
 
 
 '''
