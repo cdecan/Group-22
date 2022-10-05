@@ -15,6 +15,7 @@ def pytest_sessionstart():
     db_file = 'db.sqlite'
     if os.path.exists(db_file):
         os.remove(db_file)
+    print("lalalalala")
 
 
 def pytest_sessionfinish():
