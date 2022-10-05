@@ -13,6 +13,7 @@ def test_r1_7_user_register():
 
 def test_r2_1_login():
     with app.app_context():
+        print("ASDASDASDASD")
         '''
         Testing R2-1: A user can log in using her/his email address 
           and the password.
@@ -21,6 +22,7 @@ def test_r2_1_login():
         '''
 
         user = login('test0@test.com', 123456)
+        print(user)
         assert user is not None
         assert user.username == 'u0'
 
