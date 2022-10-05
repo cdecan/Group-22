@@ -1,4 +1,4 @@
-from flask import Flask, current_app
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # setting up SQLAlchemy and data models
@@ -24,7 +24,3 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %s>' % self.id
-
-    with app.app_context():
-        # within this block, current_app points to app.
-        print (current_app.name)
