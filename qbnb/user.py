@@ -24,3 +24,7 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %s>' % self.id
+
+    with app.app_context():
+        # within this block, current_app points to app.
+        print (current_app.name)
