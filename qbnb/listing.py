@@ -43,7 +43,8 @@ def create_listing(owner_id, title, description, price):
     if len(title_existed) > 0:
         return False
     # check if description meets criteria:
-    if len(description) < 20 or len(description) > 2000 or len(description) < len(title):
+    if len(description) < 20 or len(description) > 2000 \
+            or len(description) < len(title):
         return False
     # check if price meets criteria:
     if price < 10 or price > 10000:
