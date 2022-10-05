@@ -34,3 +34,6 @@ class Transaction(db.Model):
     def __repr__(self):
         """Each listing will be represented by a unique ID"""
         return '<Transaction %r>' % self.id
+
+
+db.create_all()

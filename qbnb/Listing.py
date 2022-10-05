@@ -32,3 +32,6 @@ class Listing(db.Model):
     def __repr__(self):
         """A listing represents itself by displaying the associated address"""
         return '<Listing %r>' % self.address
+
+
+db.create_all()
