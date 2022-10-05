@@ -11,16 +11,17 @@ db = SQLAlchemy(app)
 
 
 class User(db.Model):
-    username = db.Column(
-        db.String(80), nullable=False)
-    email = db.Column(
-        db.String(120), unique=True, nullable=False,
-        primary_key=True)
-    password = db.Column(
-        db.String(120), nullable=False)
+    print("a")
+    #  username = db.Column(
+   #     db.String(80), nullable=False)
+  #  email = db.Column(
+  #      db.String(120), unique=True, nullable=False,
+  #      primary_key=True)
+  #  password = db.Column(
+  #      db.String(120), nullable=False)
 
-    def __repr__(self):
-        return '<User %r>' % self.username
+   # def __repr__(self):
+  #      return '<User %r>' % self.username
 
 
 # create all tables
