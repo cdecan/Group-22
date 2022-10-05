@@ -15,7 +15,6 @@ def pytest_sessionstart():
     db_file = 'db.sqlite'
     if os.path.exists(db_file):
         os.remove(db_file)
-    print("lalalalala")
 
 
 def pytest_sessionfinish():
@@ -23,4 +22,5 @@ def pytest_sessionfinish():
     Optional function called when testing is done.
     Do nothing for now
     '''
+    print("lalalalalala")
     pass
