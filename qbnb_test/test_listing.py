@@ -1,5 +1,5 @@
 from qbnb.listing import create_listing
-from qbnb.User import User
+from qbnb.models import User
 
 
 def test_r4_1_create_listing():
