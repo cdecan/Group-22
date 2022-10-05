@@ -4,11 +4,12 @@ from qbnb.User import User
 
 def test_r4_1_create_listing():
     '''
-    Testing R4-1: If title is not alphanumeric or has spaces at the front or back, then it fails.
+    Testing R4-1: If title is not alphanumeric or has
+    spaces at the front or back,then it fails.
     '''
 
     user = User.user(user_id=1, email="test@test.com")
-    assert create_listing('1','Title', 'DescriptionDescription', 20.00)\
+    assert create_listing('1', 'Title', 'DescriptionDescription', 20.00)\
            is True
     assert create_listing('1', 'Title2', 'DescriptionDescription', 20.00)\
            is True
@@ -65,8 +66,9 @@ def test_r4_4_create_listing():
     user = User(user_id=1, email="test@test.com")
     assert create_listing('1', 'Title', 'DescriptionDescription', 20.00)\
            is True
-    assert create_listing('1', 'TitleTitleTitleTitleTitleTitleTitleTitleTitle'
-                          , 'DescriptionDescription', 20.00) is False
+    assert create_listing('1', 'TitleTitleTitleTitleTitleTitle'
+                               'TitleTitleTitle',
+                          'DescriptionDescription', 20.00) is False
 
 
 def test_r4_5_create_listing():
@@ -79,8 +81,8 @@ def test_r4_5_create_listing():
            is True
     assert create_listing('1', 'Title2', 'DescriptionDescription', 9.00)\
            is False
-    assert create_listing('1', 'Title3', 'DescriptionDescription', 10001.00)\
-           is False
+    assert create_listing('1', 'Title3', 'DescriptionDescription',
+                          10001.00) is False
 
 
 def test_r4_6_create_listing():
