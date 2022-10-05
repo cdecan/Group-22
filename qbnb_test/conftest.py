@@ -22,5 +22,4 @@ def pytest_sessionfinish():
     Optional function called when testing is done.
     Do nothing for now
     '''
-    print("lalalalalala")
     pass
