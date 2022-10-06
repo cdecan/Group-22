@@ -22,10 +22,11 @@ def test_r1_7_user_register():
     assert register('X', 'test2@test.com', 'Test123_') is False
     # name too long
     assert register('this is a very long name that the '
-                    'program cannot possibly handle', 'test2@test.com', 'Test123_') is False
+                    'program cannot possibly handle',
+                    'test2@test.com', 'Test123_') is False
     # different variations of allowed names
     assert register('u 0', 'user2@test.com', 'Test123_') is True
-    assert register('u      0', 'user3@test.com', 'Test123_') is True
+    assert register('u   0', 'user3@test.com', 'Test123_') is True
     assert register('TEST 0', 'user4@test.com', 'Test123_') is True
     assert register('Test', 'user5@test.com', 'Test123_') is True
 
