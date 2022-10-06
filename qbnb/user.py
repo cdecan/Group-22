@@ -34,7 +34,7 @@ class User(db.Model):
 
 
 # to fix the bug with app.app_context
-# app.app_context().push()
+app.app_context().push()
 # drop previous table if exists
 # makes sure that no previous data remaining to mess with testing
 # will be removed later when actual data is needed
