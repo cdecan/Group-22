@@ -14,21 +14,15 @@ class Listing(db.Model):
     Contains information about the property listings
     """
     id = db.Column(db.Integer, primary_key=True)
-    # A review is posted by a user.
-    creator = db.relationship('User', backref='listing',
-                              uselist=False, lazy=True)
-    # basic info about the property to be shown to the user
-    address = db.Column(db.String(120), unique=True, nullable=False)
-    price_dollars = db.Column(db.Integer, nullable=False)
-    price_cents = db.Column(db.Integer, nullable=False)
-    number_of_guests = db.Column(db.Integer, nullable=False)
-    number_of_beds = db.Column(db.Integer, nullable=False)
-    number_of_bathrooms = db.Column(db.Integer, nullable=False)
-    list_date = db.Column(db.Date, nullable=False)
-    availability = db.Column(db.Boolean, nullable=False)
-    # a listing can contain many reviews
-    reviews = db.relationship('Review', backref='listing', lazy=True)
+    title = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=True)
+    price = db.Column(db.Float, nullable=False)
+    last_modified_date = db.Column(db.Date, nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey('owner.id'),
+                         nullable=False)
+    owner = db.relationship('Listing', backref=db.backref('listings',
+                                                          lazy=True))
 
     def __repr__(self):
-        """A listing represents itself by displaying the associated address"""
-        return '<Listing %r>' % self.address
+        """A listing represents itself by displaying the associated title"""
+        return '<Listing %r>' % self.title
