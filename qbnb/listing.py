@@ -1,4 +1,3 @@
-# from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import User
 from datetime import date
