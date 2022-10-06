@@ -2,14 +2,18 @@ from flask_sqlalchemy import SQLAlchemy
 from qbnb import app
 from qbnb.listing import create_listing
 from qbnb.user import User
-from qbnb.listing import Listing
 
 db = SQLAlchemy(app)
-user1 = User(id=1, email="test@test.com", password="asdasd", username="asdasd", billing_address="asdasd", postal_code="asdasd", balance=5)
-user2 = User(id=2, email="", password="password", username="username2", billing_address="asdasd", postal_code="asdasd", balance=5)
+user1 = User(id=1, email="test@test.com", password="asdasd",
+             username="asdasd", billing_address="asdasd",
+             postal_code="asdasd", balance=5)
+user2 = User(id=2, email="", password="password", username="username2",
+             billing_address="asdasd", postal_code="asdasd", balance=5)
 db.session.add(user1)
 db.session.add(user2)
 db.session.commit()
+
+
 def test_r4_1_create_listing():
     '''
     Testing R4-1: If title is not alphanumeric or has
@@ -35,11 +39,11 @@ def test_r4_2_create_listing():
      then it fails.
     '''
     assert create_listing(1, 'Test2', 'DescriptionDescription', 20.00)\
-           is True
+        is True
     assert create_listing(1, 'Titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-                               'eeeeee'
-                               'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-                               'eeeeeeeeeeeeee',
+                          'eeeeee'
+                          'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+                          'eeeeeeeeeeeeee',
                           'Descriptionnnnnnnnnnnnnnnnnnnnnnnnnnnnn'
                           'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'
                           'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn',
@@ -67,9 +71,9 @@ def test_r4_4_create_listing():
     '''
 
     assert create_listing(1, 'Test4', 'DescriptionDescription', 20.00)\
-           is True
+        is True
     assert create_listing(1, 'TitleTitleTitleTitleTitleTitle'
-                               'TitleTitleTitle',
+                             'TitleTitleTitle',
                           'DescriptionDescription', 20.00) is False
 
 
