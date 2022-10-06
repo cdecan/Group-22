@@ -122,3 +122,6 @@ def test_r4_8_create_listing():
            is True
     assert create_listing(1, 'Test8', 'DescriptionDescription', 20.00)\
            is False
+
+
+db.drop_all()
