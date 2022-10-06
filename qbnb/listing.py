@@ -13,15 +13,19 @@ class Listing(db.Model):
     """
     Contains information about the property listings
     """
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, nullable=False)
+    # each listing has a unique id
+    id = db.Column(db.Integer, unique=True, primary_key=True)
+    # each listing has a unique title
+    title = db.Column(db.String, unique=True, nullable=False)
+    # each listing has a description
     description = db.Column(db.String, nullable=True)
+    # each listing has a price
     price = db.Column(db.Float, nullable=False)
+    # each listing has a last modified date
     last_modified_date = db.Column(db.Date, nullable=True)
+    # each listing has an owner with a unique id
     owner_id = db.Column(db.Integer, db.ForeignKey(User.id),
                          nullable=True)
-    # owner = db.relationship('Listing', backref=db.backref('listings',
-    #                                                     lazy=True))
 
     def __repr__(self):
         """A listing represents itself by displaying the associated title"""
