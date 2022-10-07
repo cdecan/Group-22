@@ -6,7 +6,7 @@ def test_r1_7_user_register():
     Testing if the register function works
     """
     # testing for username in this block
-    assert register('u0', 'user0@test.com', 'Test123_') is True
+    # assert register('u0', 'user0@test.com', 'Test123_') is True
     assert register('u1', 'user1@test.com', 'Test123_') is True
     # illegal character
     assert register('u0.', 'test2@test.com', 'Test123_') is False
