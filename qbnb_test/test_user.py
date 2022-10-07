@@ -6,7 +6,7 @@ def test_r1_7_user_register():
     Testing if the register function works
     """
     # testing for username in this block
-    # assert register('u0', 'user0@test.com', 'Test123_') is True
+    assert register('u0', 'user0@test.com', 'Test123_') is True
     assert register('u1', 'user1@test.com', 'Test123_') is True
     # illegal character
     assert register('u0.', 'test2@test.com', 'Test123_') is False
@@ -74,9 +74,9 @@ def test_r2_1_login():
     so we already have many users in database)
     """
 
-    user = login('user1@test.com', 'Test123_')
+    user = login('user0@test.com', 'Test123_')
     assert user is not None
-    assert user.username == 'u1'
+    assert user.username == 'u0'
 
     user = login('test0@test.com', '1234567')
     assert user is None
