@@ -76,7 +76,7 @@ def test_r2_1_login():
 
     user = login('user1@test.com', 'Test123_')
     assert user is not None
-    assert user.username == 'u0'
+    assert user.username == 'u1'
 
     user = login('test0@test.com', '1234567')
     assert user is None
