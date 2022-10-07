@@ -80,7 +80,3 @@ def test_r2_1_login():
 
     user = login('test0@test.com', '1234567')
     assert user is None
-
-
-test_r1_7_user_register()
-test_r2_1_login()
