@@ -74,7 +74,7 @@ def test_r2_1_login():
     so we already have many users in database)
     """
 
-    user = login('user0@test.com', 'Test123_')
+    user = login('user1@test.com', 'Test123_')
     assert user is not None
     assert user.username == 'u0'
 
