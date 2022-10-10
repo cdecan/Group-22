@@ -26,3 +26,7 @@ class Listing(db.Model):
     def __repr__(self):
         """A listing represents itself by displaying the associated title"""
         return '<Listing %r>' % self.title
+
+
+def update_listing(listing_id, new_id, new_title, new_description, new_price):
+    print()
