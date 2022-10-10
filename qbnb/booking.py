@@ -19,12 +19,9 @@ class Booking(db.Model):
     user_id = db.Column(db.Integer, unique=True, nullable=False)
     # ID of the listing to be booked.
     listing_id = db.Column(db.Integer, unique=True, nullable=False)
-    # Listing price dollars
-    listing_price_dollars = db.Column(
-        db.Integer, db.ForeignKey('Listing.price_dollars'), nullable=False)
-    # Listing price cents
-    listing_price_cents = db.Column(
-        db.Integer, db.ForeignKey('Listing.price_cents'), nullable=False)
+    # Listing price
+    price = db.Column(db.Float,
+                      db.ForeignKey('Listing.price'), nullable=False)
     # Booking date.
     date = db.Column(db.DateTime, nullable=False)
 
