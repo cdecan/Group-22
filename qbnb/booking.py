@@ -1,4 +1,3 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from qbnb import app
 
@@ -27,3 +26,6 @@ class Booking(db.Model):
     def __repr__(self):
         """Each booking will be represented by a unique ID"""
         return '<Booking %r>' % self.id
+
+
+db.create_all()
