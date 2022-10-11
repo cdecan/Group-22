@@ -1,10 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from qbnb import app
 
 # setting up SQLAlchemy and data models so
 # we can map data models into database tables
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 db = SQLAlchemy(app)
 
 
@@ -23,7 +22,7 @@ class Booking(db.Model):
     price = db.Column(db.Float,
                       db.ForeignKey('Listing.price'), nullable=False)
     # Booking date.
-    date = db.Column(db.DateTime, nullable=False)
+    date = db.Column(db.Date, nullable=False)
 
     def __repr__(self):
         """Each booking will be represented by a unique ID"""
