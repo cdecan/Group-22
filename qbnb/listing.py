@@ -95,7 +95,7 @@ def update_listing(listing_id, new_id, new_title,
         if (new_price <= to_update.price) or \
                 (not (10 <= new_price <= 10000)):
             return False
-        
+
         to_update.price = new_price
 
     # Updates the last modified date
@@ -106,7 +106,7 @@ def update_listing(listing_id, new_id, new_title,
     # Compares the current date with the required date range
     if not (20210102 < temp < 20250102):
         return False
-    
+
     to_update.last_modified_date = current_date
 
     db.session.commit()
