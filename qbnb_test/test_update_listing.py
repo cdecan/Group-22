@@ -72,8 +72,8 @@ db.session.commit()
 
 def test_r5_1_update_listing():
     """
-    Testing R5-1: Can one update all attributes of the
-    listing, except owner_id and last_modified_date.
+        Testing R5-1: Can one update all attributes of the
+        listing, except owner_id and last_modified_date.
     """
 
     assert update_listing(1,
@@ -159,12 +159,21 @@ def test_r5_1_update_listing():
 
 
 def test_r5_2_update_listing():
+    """
+        Testing R5-2: Testing that the price can only be increased.
+    """
+
     assert update_listing(2, None, None, None, 19.00) is False
     assert update_listing(2, None, None, None, 20.00) is False
     assert update_listing(2, None, None, None, 21.00) is True
 
 
 def test_r5_3_update_listing():
+    """
+        Testing R5-3: Checks if last_modified_date is
+        updated when the update operation is successful.
+    """
+
     update_listing(3, None, None, None, 19.00)
     assert test_listing_3.last_modified_date == test_date
     update_listing(3, None, None, None, 21.00)
@@ -172,6 +181,12 @@ def test_r5_3_update_listing():
 
 
 def test_r5_4_update_listing():
+    """
+        Testing R5-4: Checks in order if the
+        updates made follow the requirements in R4.
+    """
+
+    # R4-1 and R4-2
     assert update_listing(4,
                           None,
                           "correct title 4",
@@ -206,6 +221,7 @@ def test_r5_4_update_listing():
                           None,
                           None) is False
 
+    # R4-3 and R4-4
     assert update_listing(4,
                           None,
                           None,
@@ -230,17 +246,21 @@ def test_r5_4_update_listing():
                           "Description is shorter than title",
                           None) is False
 
+    # R4-5
     assert update_listing(4, None, None, None, 5.00) is False
     assert update_listing(4, None, None, None, 10001.00) is False
 
+    # R4-6
     temp = test_listing_4.last_modified_date
     temp = temp.replace('-', '')
     temp = int(temp)
     assert 20210102 < temp < 20250102
 
+    # R4-7
     assert update_listing(5, None, None, None, 25.00) is False
     assert update_listing(6, None, None, None, 25.00) is False
 
+    # R4-8
     assert update_listing(4, None, "listing 2", None, None) is False
 
 
