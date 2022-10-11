@@ -1,9 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
-import datetime
-from qbnb import app
 from qbnb.listing import Listing
 from qbnb.listing import update_listing
 from qbnb.user import User
+import datetime
+from qbnb import app
 
 db = SQLAlchemy(app)
 
@@ -21,46 +21,46 @@ user2 = User(id=2,
              billing_address="",
              postal_code="",
              balance=100)
+db.session.add(user1)
+db.session.add(user2)
 
-test_date = datetime.datetime(2021, 8, 5).strftime("%Y-%m-%d")
+test_date = datetime.datetime(2021, 8, 5).date()
 test_listing_1 = Listing(id=1,
                          title="listing 1",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=1)
 test_listing_2 = Listing(id=2,
                          title="listing 2",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=1)
 test_listing_3 = Listing(id=3,
                          title="listing 3",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=1)
 test_listing_4 = Listing(id=4,
                          title="listing 4",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=1)
 test_listing_5 = Listing(id=5,
                          title="listing 5",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=2)
 test_listing_6 = Listing(id=6,
                          title="listing 6",
                          description="description",
                          price=20.00,
-                         last_modififed_date=test_date,
+                         last_modified_date=test_date,
                          owner_id=3)
-db.session.add(user1)
-db.session.add(user2)
 db.session.add(test_listing_1)
 db.session.add(test_listing_2)
 db.session.add(test_listing_3)
@@ -98,22 +98,22 @@ def test_r5_1_update_listing():
                           None) is True
     assert update_listing(1,
                           7,
-                          "correct title 1",
+                          "correct title 1 0",
                           "this is a correct description",
                           23.00) is True
     assert update_listing(7,
                           1,
-                          "correct title 1",
+                          "correct title 1 1",
                           "this is a correct description",
                           None) is True
     assert update_listing(1,
                           7,
-                          "correct title 1",
+                          "correct title 1 2",
                           None,
                           24.00) is True
     assert update_listing(7,
                           1,
-                          "correct title 1",
+                          "correct title 1 3",
                           None,
                           None) is True
     assert update_listing(1,
@@ -138,22 +138,22 @@ def test_r5_1_update_listing():
                           None) is True
     assert update_listing(1,
                           None,
-                          "correct title 1",
+                          "correct title 1 4",
                           "this is a correct description",
                           27.00) is True
     assert update_listing(1,
                           None,
-                          "correct title 1",
+                          "correct title 1 5",
                           "this is a correct description",
                           None) is True
     assert update_listing(1,
                           None,
-                          "correct title 1",
+                          "correct title 1 6",
                           None,
                           28.00) is True
     assert update_listing(1,
                           None,
-                          "correct title 1",
+                          "correct title 1 7",
                           None,
                           None) is True
 
@@ -175,9 +175,12 @@ def test_r5_3_update_listing():
     """
 
     update_listing(3, None, None, None, 19.00)
-    assert test_listing_3.last_modified_date == test_date
-    update_listing(3, None, None, None, 21.00)
-    assert test_listing_3.last_modified_date != test_date
+    check_date = Listing.query.filter_by(id=3).first()
+    assert check_date.last_modified_date == test_date
+    update_listing(3, None, None, None, 25.00)
+    check_date = Listing.query.filter_by(id=3).first()
+    assert check_date != test_date
+    # assert tf is False
 
 
 def test_r5_4_update_listing():
@@ -252,6 +255,7 @@ def test_r5_4_update_listing():
 
     # R4-6
     temp = test_listing_4.last_modified_date
+    temp = temp.strftime("%Y-%m-%d")
     temp = temp.replace('-', '')
     temp = int(temp)
     assert 20210102 < temp < 20250102

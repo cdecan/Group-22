@@ -1,11 +1,11 @@
 # tested with flake8
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from qbnb.user import User
+from datetime import date
+from qbnb import app
 
 # setting up SQLAlchemy and data models
 # so we can map data models into database tables
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 db = SQLAlchemy(app)
 
 
@@ -18,14 +18,15 @@ class Listing(db.Model):
     description = db.Column(db.String, nullable=True)
     price = db.Column(db.Float, nullable=False)
     last_modified_date = db.Column(db.Date, nullable=False)
-    owner_id = db.Column(db.Integer, db.ForeignKey('owner.id'),
-                         nullable=False)
-    owner = db.relationship('Listing', backref=db.backref('listings',
-                                                          lazy=True))
+    owner_id = db.Column(db.Integer, db.ForeignKey(User.id),
+                         nullable=True)
 
     def __repr__(self):
         """A listing represents itself by displaying the associated title"""
         return '<Listing %r>' % self.title
+
+
+db.create_all()
 
 
 def update_listing(listing_id, new_id, new_title,
@@ -34,8 +35,8 @@ def update_listing(listing_id, new_id, new_title,
        excluding owner_id and last_modified_date.
 
     Args:
-        listing_id (undefined, None): Unique id for the listing to change
-        new_id (undefined, None): Updated id for the listing
+        listing_id (int, None): Unique id for the listing to change
+        new_id (int, None): Updated id for the listing
         new_title (str, None): Updated title for the listing
         new_description (str, None): Updated description for the listing
         new_price (float, None): Updated price for the listing
@@ -52,8 +53,9 @@ def update_listing(listing_id, new_id, new_title,
 
     # Check that owner and their email exists
     owner = User.query.filter_by(id=to_update.owner_id).first()
-    owner_email = User.query.filter_by(email=owner.email).all()
-    if len(owner_email) <= 0:
+    if not owner:
+        return False
+    if owner.email == '':
         return False
 
     # Ensures new id is not already taken
@@ -90,7 +92,7 @@ def update_listing(listing_id, new_id, new_title,
 
     # Ensures new price follows the price requirements
     if new_price is not None:
-        if (new_price < to_update.price) or \
+        if (new_price <= to_update.price) or \
                 (not (10 <= new_price <= 10000)):
             return False
         
@@ -98,7 +100,8 @@ def update_listing(listing_id, new_id, new_title,
 
     # Updates the last modified date
     current_date = date.today()
-    temp = current_date.replace('-', '')
+    temp = current_date.strftime("%Y-%m-%d")
+    temp = temp.replace('-', '')
     temp = int(temp)
     # Compares the current date with the required date range
     if not (20210102 < temp < 20250102):
