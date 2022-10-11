@@ -48,7 +48,8 @@ def create_listing(owner_id, title, description, price):
     # check if title meets criteria:
     if len(title) < 1 or len(title) > 80:
         return False
-    if not title.isalnum() or title.endswith(' ') or title.startswith(' '):
+    if not all(letter.isalnum() or letter.isspace() for letter in title)\
+            or title.endswith(' ') or title.startswith(' '):
         return False
     title_existed = Listing.query.filter_by(title=title).all()
     if len(title_existed) > 0:
