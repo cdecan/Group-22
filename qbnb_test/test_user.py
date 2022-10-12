@@ -25,10 +25,10 @@ def test_r1_2_user_register():
     """
     user = login('user0@test.com', 'Test123_')
     assert user is not None
-    assert user.id == 1
+    assert user.id == 3
     user = login('user1@test.com', 'Test123_')
     assert user is not None
-    assert user.id == 2
+    assert user.id == 4
 
 
 def test_r1_3_user_register():
