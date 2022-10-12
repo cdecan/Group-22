@@ -1,11 +1,9 @@
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from qbnb import app
 import re
 
 # setting up SQLAlchemy and data models
 # so we can map data models into database tables
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 db = SQLAlchemy(app)
 
 
@@ -124,3 +122,5 @@ def update_postal_code(user_id: int, new_postal_code: str):
     db.session.commit()
     # Success
     return True
+
+db.create_all()
