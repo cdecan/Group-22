@@ -1,6 +1,6 @@
 # from qbnb.models import register, login
-#
-#
+
+
 # def test_r1_7_user_register():
 #     '''
 #     Testing R1-7: If the email has been used, the operation failed.
