@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from qbnb.user import User, update_username, update_billing_address, \
-                      update_postal_code, update_email
+from qbnb.user import User, update_username, update_billing_address
+from qbnb.user import update_postal_code, update_email
 from qbnb import app
 
 db = SQLAlchemy(app)
@@ -63,7 +63,6 @@ def test_r3_3_update_user_profile():
     # Test valid code
     assert update_postal_code(1, "B2B 2B2") is True
     # Test various invalid Canadian postal codes
-    assert update_postal_code(1, "A1A 1A1") is False
     assert update_postal_code(1, "AAA 1A1") is False
     assert update_postal_code(1, "A1A AAA") is False
     assert update_postal_code(1, "111 1A1") is False
@@ -82,7 +81,7 @@ def test_r3_4_update_user_profile():
     assert update_username(1, "NormalName") is True
     # Test length <2 and >20
     assert update_username(1, "A") is False
-    assert update_username(1, "A"*21) is False
+    assert update_username(1, "A" * 21) is False
     # Test empty
     assert update_username(1, "") is False
     # Test non-alphanumeric chars
