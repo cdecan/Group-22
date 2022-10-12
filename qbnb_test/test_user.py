@@ -1,3 +1,11 @@
+"""
+Runs several tests regarding the User entity.
+
+Tests the register and login functions.
+
+Tests the update_username, update_billing_address, update_postal_code,
+and update_email functions.
+"""
 from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import User, update_username, update_billing_address
 from qbnb.user import update_postal_code, update_email
@@ -9,12 +17,8 @@ db = SQLAlchemy(app)
 user1 = User(id=123, email="test@test.com", password="asdfgh",
              username="asdfgh", billing_address="asdfgh",
              postal_code="A1A 1A1", balance=0)
-user1_mirror = User(id=234, email="test@test.com", password="asdfgh",
-                    username="asdfgh", billing_address="asdfgh",
-                    postal_code="A1A 1A1", balance=0)
 
 db.session.add(user1)
-db.session.add(user1_mirror)
 db.session.commit()
 
 
@@ -24,22 +28,37 @@ def test_r3_1_update_user_profile():
     billing address, and postal code, that no other attributes
     of the user have changed. If they did, fail.
     """
-    # Update the username, email, postal code, and billing address of one user
-    update_username(123, "qwertyu")
-    update_billing_address(123, "qwertyu")
-    update_postal_code(123, "B1B 1B1")
-    update_email(123, "updated@test.com")
-    u1 = User.query.filter_by(id=123).first()
-    mirror = User.query.filter_by(id=234).first()
+    # Initial attributes for a user, to be tracked
+    orig_id = 234
+    orig_email = "test@test.com"
+    orig_password = "asdfgh"
+    orig_username = "asdfgh"
+    orig_billing_address = "asdfgh"
+    orig_postal_code = "A1A 1A1"
+    orig_balance = 0
+    # Create a user to update
+    test_user = User(id=orig_id, email=orig_email, password=orig_password,
+                     username=orig_username,
+                     billing_address=orig_billing_address,
+                     postal_code=orig_postal_code, balance=orig_balance)
+    # Add user to database
+    db.session.add(test_user)
+    db.session.commit()
+    # Update the username, email, postal code, and billing address of user
+    update_username(234, "qwertyu")
+    update_billing_address(234, "qwertyu")
+    update_postal_code(234, "B1B 1B1")
+    update_email(234, "updated@test.com")
+    u1 = User.query.filter_by(id=234).first()
     # Ensure the changed values now differ from the original ones
-    assert u1.email == mirror.email is False
-    assert u1.username == mirror.username is False
-    assert u1.billing_address == mirror.billing_address is False
-    assert u1.postal_code == mirror.postal_code is False
+    assert u1.email == orig_email is False
+    assert u1.username == orig_username is False
+    assert u1.billing_address == orig_billing_address is False
+    assert u1.postal_code == orig_postal_code is False
     # Ensure the non-changed values have remained the same
-    assert (u1.id == 123) is True
-    assert u1.balance == mirror.balance is True
-    assert u1.password == mirror.password is True
+    assert u1.id == orig_id is True
+    assert u1.balance == orig_balance is True
+    assert u1.password == orig_password is True
 
 
 def test_r3_2_update_user_profile():
