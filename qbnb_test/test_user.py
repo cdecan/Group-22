@@ -14,7 +14,7 @@ from qbnb.user import register, login
 
 db = SQLAlchemy(app)
 
-user1 = User(id=123, email="test@test.com", password="asdfgh",
+user1 = User(id=123, email="sample123@test.com", password="asdfgh",
              username="asdfgh", billing_address="asdfgh",
              postal_code="A1A 1A1", balance=0)
 
@@ -30,7 +30,7 @@ def test_r3_1_update_user_profile():
     """
     # Initial attributes for a user, to be tracked
     orig_id = 234
-    orig_email = "test@test.com"
+    orig_email = "sample234@test.com"
     orig_password = "asdfgh"
     orig_username = "asdfgh"
     orig_billing_address = "asdfgh"
