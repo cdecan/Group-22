@@ -123,4 +123,5 @@ def update_postal_code(user_id: int, new_postal_code: str):
     # Success
     return True
 
+
 db.create_all()
