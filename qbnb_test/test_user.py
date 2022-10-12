@@ -178,10 +178,10 @@ def test_r2_2_login():
 
     # invalid email and password
     user = login('@test.com', '1234567')
-    assert user is False
+    assert user is None
     # invalid password
     user = login('test0@test.com', '1234567')
-    assert user is False
+    assert user is None
     # invalid email
     user = login('@test.com', 'Test123_')
-    assert user is False
+    assert user is None
