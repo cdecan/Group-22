@@ -74,7 +74,7 @@ def register(name, email, password):
 
 def check_email(email):
     # check if email or password is empty
-    if len(email) == 0 or len(password) == 0:
+    if len(email) == 0:
         return False
 
     # validating the email using regex,
@@ -106,6 +106,8 @@ def check_name(name):
 
 
 def check_password(password):
+    if len(password) == 0:
+        return False
     # validating the password using regex
     regex_password = re.compile("^(?=.*[a-z])(?=." +
                                 "*[A-Z])(?=.*\\d)" +

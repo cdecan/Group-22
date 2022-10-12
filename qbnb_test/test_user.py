@@ -105,6 +105,7 @@ def test_r1_6_user_register():
     assert register('TEST 0', 'user4@test.com', 'Test123_') is True
     assert register('Test', 'user5@test.com', 'Test123_') is True
 
+
 def test_r1_7_user_register():
     """
     Testing if the register function works with r1-7:
@@ -116,6 +117,7 @@ def test_r1_7_user_register():
     # repeated email
     assert register('u0', 'test0@test.com', 'Test123_') is False
 
+
 def test_r1_8_user_register():
     """
     Testing if the register function works with r1-8:
@@ -126,6 +128,7 @@ def test_r1_8_user_register():
     assert user is not None
     assert user.billing_address == ""
 
+
 def test_r1_9_user_register():
     """
     Testing if the register function works with r1-9:
@@ -135,6 +138,7 @@ def test_r1_9_user_register():
     user = login('user0@test.com', 'Test123_')
     assert user is not None
     assert user.postal_code == ""
+
 
 def test_r1_9_user_register():
     """
@@ -163,6 +167,7 @@ def test_r2_1_login():
     user = login('userthatdontexist@test.com', 'ThisPassword_')
     assert user is None
 
+
 def test_r2_2_login():
     """
     Testing R2-1: The login function should check
@@ -173,14 +178,12 @@ def test_r2_2_login():
     so we already have many users in database)
     """
 
-    #invalid email and password
+    # invalid email and password
     user = login('@test.com', '1234567')
     assert user is None
-
-    #invalid password
+    # invalid password
     user = login('test0@test.com', '1234567')
     assert user is None
-
-    #invalid email
+    # invalid email
     user = login('@test.com', 'Test123_')
     assert user is None
