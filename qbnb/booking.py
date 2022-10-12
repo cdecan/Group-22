@@ -28,4 +28,3 @@ class Booking(db.Model):
         return '<Booking %r>' % self.id
 
 
-db.create_all()
