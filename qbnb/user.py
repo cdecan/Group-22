@@ -59,6 +59,11 @@ def register(name, email, password):
     if check_password(password) is False:
         return False
 
+    # check if the email has been used:
+    existed = User.query.filter_by(email=email).all()
+    if len(existed) > 0:
+        return False
+
     # create a new user
     user = User(username=name, email=email, password=password,
                 billing_address="", postal_code="", balance=100)
@@ -96,11 +101,6 @@ def check_name(name):
     # to validate that the name without spaces is all alphanumeric
     temp_name = name.replace(" ", "")
     if not temp_name.isalnum():
-        return False
-
-    # check if the email has been used:
-    existed = User.query.filter_by(email=email).all()
-    if len(existed) > 0:
         return False
     return True
 
