@@ -14,6 +14,7 @@ user1_mirror = User(id=234, email="test@test.com", password="asdfgh",
 
 db.session.add(user1)
 db.session.add(user1_mirror)
+db.session.commit()
 
 
 def test_r3_1_update_user_profile():
