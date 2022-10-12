@@ -4,7 +4,6 @@ from qbnb import app
 # Setting up SQLAlchemy and data models so we can map data models into
 # database tables
 db = SQLAlchemy(app)
-db.create_all()
 
 
 class Review(db.Model):
