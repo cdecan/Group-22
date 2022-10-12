@@ -174,16 +174,14 @@ def test_r2_2_login():
     if the supplied inputs meet the same
     email/password requirements as above,
     before checking the database.
-    (will be tested after the previous test,
-    so we already have many users in database)
     """
 
     # invalid email and password
     user = login('@test.com', '1234567')
-    assert user is None
+    assert user is False
     # invalid password
     user = login('test0@test.com', '1234567')
-    assert user is None
+    assert user is False
     # invalid email
     user = login('@test.com', 'Test123_')
-    assert user is None
+    assert user is False

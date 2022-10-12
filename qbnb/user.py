@@ -128,9 +128,9 @@ def login(email, password):
     """
     # validating
     if check_email(email) is False:
-        return False
+        return None
     if check_password(password) is False:
-        return False
+        return None
 
     valid = User.query.filter_by(email=email, password=password).all()
     if len(valid) != 1:
