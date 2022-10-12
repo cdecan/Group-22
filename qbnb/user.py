@@ -136,5 +136,3 @@ def login(email, password):
     if len(valid) != 1:
         return None
     return valid[0]
-
-db.create_all()
