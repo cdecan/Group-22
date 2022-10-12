@@ -14,6 +14,11 @@ from qbnb.user import register, login
 
 db = SQLAlchemy(app)
 
+# Drop any existing tables
+db.drop_all()
+# Create new tables
+db.create_all()
+
 user1 = User(id=123, email="sample123@test.com", password="asdfgh",
              username="asdfgh", billing_address="asdfgh",
              postal_code="A1A 1A1", balance=0)
@@ -288,6 +293,3 @@ def test_r2_2_login():
     # invalid email
     user = login('@test.com', 'Test123_')
     assert user is None
-
-
-db.drop_all()
