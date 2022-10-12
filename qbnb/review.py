@@ -12,6 +12,8 @@ class Review(db.Model):
     Contains information about a listing review.
     """
     # Unique ID for this review
+    id = db.Column(db.Integer, primary_key=True)
+    # Unique ID for user who authored review
     user_id = db.Column(db.Integer, unique=True, nullable=False)
     # Unique ID for listing this review is of
     listing_id = db.Column(db.Integer, unique=True, nullable=False)
