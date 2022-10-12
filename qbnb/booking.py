@@ -1,34 +1,31 @@
-from qbnb import app
 from flask_sqlalchemy import SQLAlchemy
+from qbnb import app
 
 # setting up SQLAlchemy and data models so
 # we can map data models into database tables
 db = SQLAlchemy(app)
 
 
-class Transaction(db.Model):
+class Booking(db.Model):
     """
-    Contains information required to complete a transaction
-    between two users.
+    Contains information required to book a property.
     """
-    # Transaction ID
+
+    # Booking ID
     id = db.Column(db.Integer, unique=True, primary_key=True)
-    # ID of the user renting the property.
-    id_renter = db.Column(db.Integer, unique=True, nullable=False)
-    # ID of the user listing their property to be rented.
-    id_owner = db.Column(db.Integer, unique=True, nullable=False)
-    # Listing price dollars
-    listing_price_dollars = db.Column(
-        db.Integer, db.ForeignKey('Listing.price_dollars'), nullable=False)
-    # Listing price cents
-    listing_price_cents = db.Column(
-        db.Integer, db.ForeignKey('Listing.price_cents'), nullable=False)
-    # listing availability.
-    listing_availability = db.Column(
-        db.Boolean, db.ForeignKey('Listing.availability'), nullable=False)
-    # Relationship to listing entity.
-    listing = db.relationship('Listing', backref='listing', lazy=True)
+    # ID of the user making the booking.
+    user_id = db.Column(db.Integer, unique=True, nullable=False)
+    # ID of the listing to be booked.
+    listing_id = db.Column(db.Integer, unique=True, nullable=False)
+    # Listing price
+    price = db.Column(db.Float,
+                      db.ForeignKey('Listing.price'), nullable=False)
+    # Booking date.
+    date = db.Column(db.Date, nullable=False)
 
     def __repr__(self):
-        """Each listing will be represented by a unique ID"""
-        return '<Transaction %r>' % self.id
+        """Each booking will be represented by a unique ID"""
+        return '<Booking %r>' % self.id
+
+
+db.create_all()
