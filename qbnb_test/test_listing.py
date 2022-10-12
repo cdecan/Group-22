@@ -109,7 +109,7 @@ def test_r4_7_create_listing():
            is True
     assert create_listing(2, 'Test72', 'DescriptionDescription', 20.00)\
            is False
-    assert create_listing(3, 'Test73', 'DescriptionDescription', 20.00)\
+    assert create_listing(999, 'Test73', 'DescriptionDescription', 20.00)\
            is False
 
 
