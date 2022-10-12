@@ -251,9 +251,9 @@ def test_r1_9_user_register():
     assert user.postal_code == ""
 
 
-def test_r1_9_user_register():
+def test_r1_10_user_register():
     """
-    Testing if the register function works with r1-9:
+    Testing if the register function works with r1-10:
     Balance should be initialized as 100
     at the time of registration.
     using login function to test
