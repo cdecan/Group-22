@@ -28,28 +28,20 @@ def test_r3_1_update_user_profile():
     billing address, and postal code, that no other attributes
     of the user have changed. If they did, fail.
     """
-    # Initial attributes for a user, to be tracked
-    orig_id = 234
-    orig_email = "sample234@test.com"
-    orig_password = "asdfgh"
-    orig_username = "asdfgh"
-    orig_billing_address = "asdfgh"
-    orig_postal_code = "A1A 1A1"
-    orig_balance = 0
-    # Create a user to update
-    test_user = User(id=orig_id, email=orig_email, password=orig_password,
-                     username=orig_username,
-                     billing_address=orig_billing_address,
-                     postal_code=orig_postal_code, balance=orig_balance)
-    # Add user to database
-    db.session.add(test_user)
-    db.session.commit()
+    # Note the initial attributes of this user, for comparison later
+    orig_id = user1.id
+    orig_email = user1.email
+    orig_password = user1.password
+    orig_username = user1.username
+    orig_billing_address = user1.billing_address
+    orig_postal_code = user1.postal_code
+    orig_balance = user1.balance
     # Update the username, email, postal code, and billing address of user
-    update_username(234, "qwertyu")
-    update_billing_address(234, "qwertyu")
-    update_postal_code(234, "B1B 1B1")
-    update_email(234, "updated@test.com")
-    u1 = User.query.filter_by(id=234).first()
+    update_username(user1.id, "qwertyu")
+    update_billing_address(user1.id, "qwertyu")
+    update_postal_code(user1.id, "B1B 1B1")
+    update_email(user1.id, "updated@test.com")
+    u1 = User.query.filter_by(id=user1.id).first()
     # Ensure the changed values now differ from the original ones
     assert u1.email == orig_email is False
     assert u1.username == orig_username is False
