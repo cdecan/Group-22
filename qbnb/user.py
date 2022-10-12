@@ -114,8 +114,8 @@ def update_postal_code(user_id: int, new_postal_code: str):
     if u is None:
         return False
     # Ensure valid postal code
-    pattern = re.compile("^([A-Z][0-9][A-Z] [0-9][A-Z][0-9])$", re.IGNORECASE)
-    if len(pattern.match(new_postal_code)) == 0:
+    pattern = re.compile("([A-Z][0-9][A-Z] [0-9][A-Z][0-9])", re.IGNORECASE)
+    if pattern.match(new_postal_code) is None:
         return False
     # Update value and save to database
     u.postal_code = new_postal_code
