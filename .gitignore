@@ -130,7 +130,7 @@ dmypy.json
 
 # Pycharm stuff
 .idea/
-# vscode
+# VScode
 .vscode/
 #sql
 *.sqlite
