@@ -1,4 +1,10 @@
+from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import register, login
+from qbnb import app
+
+
+db = SQLAlchemy(app)
+db.session.commit()
 
 
 def test_r1_1_user_register():
