@@ -6,6 +6,15 @@ from qbnb import app
 # so we can map data models into database tables
 db = SQLAlchemy(app)
 
+# to fix the bug with app.app_context
+app.app_context().push()
+# drop previous table if exists
+# makes sure that no previous data remaining to mess with testing
+# will be removed later when actual data is needed
+db.drop_all()
+# create table
+db.create_all()
+
 
 class User(db.Model):
     """
@@ -122,16 +131,6 @@ def update_postal_code(user_id: int, new_postal_code: str):
     db.session.commit()
     # Success
     return True
-
-
-# to fix the bug with app.app_context
-app.app_context().push()
-# drop previous table if exists
-# makes sure that no previous data remaining to mess with testing
-# will be removed later when actual data is needed
-db.drop_all()
-# create table
-db.create_all()
 
 
 def register(name, email, password):
