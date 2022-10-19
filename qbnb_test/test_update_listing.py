@@ -1,19 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from qbnb.listing import Listing
 from qbnb.listing import update_listing
-from qbnb.user import User
+# from qbnb.user import User
 import datetime
 from qbnb import app
 
 db = SQLAlchemy(app)
 
-user1 = User(email="test_2@test.com",
-             password="Password_",
-             username="User1",
-             billing_address="",
-             postal_code="",
-             balance=100)
-db.session.add(user1)
 
 test_date = datetime.datetime(2021, 8, 5).date()
 test_listing_1 = Listing(id=11,
@@ -258,6 +251,3 @@ def test_r5_4_update_listing():
 
     # R4-8
     assert update_listing(14, None, "listing 2", None, None) is False
-
-
-db.drop_all()

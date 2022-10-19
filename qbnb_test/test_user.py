@@ -1,4 +1,10 @@
+from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import register, login
+from qbnb import app
+
+
+db = SQLAlchemy(app)
+db.session.commit()
 
 
 def test_r1_1_user_register():
@@ -25,10 +31,10 @@ def test_r1_2_user_register():
     """
     user = login('user0@test.com', 'Test123_')
     assert user is not None
-    assert user.id == 3
+    assert user.id == 4
     user = login('user1@test.com', 'Test123_')
     assert user is not None
-    assert user.id == 4
+    assert user.id == 5
 
 
 def test_r1_3_user_register():
