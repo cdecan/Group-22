@@ -133,6 +133,7 @@ def update_postal_code(user_id: int, new_postal_code: str):
     # Success
     return True
 
+
 def register(name, email, password):
     """
     Register a new user, template is copied from models.py
