@@ -35,14 +35,14 @@ def test_r3_1_update_user_profile():
     update_email(user1.id, "updated@test.com")
     u1 = User.query.filter_by(id=user1.id).first()
     # Ensure the changed values now differ from the original ones
-    assert u1.email == orig_email is False
-    assert u1.username == orig_username is False
-    assert u1.billing_address == orig_billing_address is False
-    assert u1.postal_code == orig_postal_code is False
+    assert u1.email != orig_email
+    assert u1.username != orig_username
+    assert u1.billing_address != orig_billing_address
+    assert u1.postal_code != orig_postal_code
     # Ensure the non-changed values have remained the same
-    assert u1.id == orig_id is True
-    assert u1.balance == orig_balance is True
-    assert u1.password == orig_password is True
+    assert u1.id == orig_id
+    assert u1.balance == orig_balance
+    assert u1.password == orig_password
 
 
 def test_r3_2_update_user_profile():
