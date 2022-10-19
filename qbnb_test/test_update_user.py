@@ -6,11 +6,11 @@ from qbnb.user import User
 
 db = SQLAlchemy(app)
 
-#user1 = User(id=10, email="sample10@test.com", password="asdfgh",
-#             username="asdfgh", billing_address="asdfgh",
-#             postal_code="A1A 1A1", balance=0)
+user1 = User(id=3, email="sample10@test.com", password="asdfgh",
+             username="asdfgh", billing_address="asdfgh",
+             postal_code="A1A 1A1", balance=0)
 
-#db.session.add(user1)
+db.session.add(user1)
 db.session.commit()
 
 
@@ -52,12 +52,12 @@ def test_r3_2_update_user_profile():
     If not, fail.
     """
     # Test valid code
-    assert update_postal_code(10, "B2B 2B2") is True
+    assert update_postal_code(3, "B2B 2B2") is True
     # Test empty code
-    assert update_postal_code(10, "") is False
+    assert update_postal_code(3, "") is False
     # Test non-alphanumeric and special characters codes
-    assert update_postal_code(10, ",.@ %^*") is False
-    assert update_postal_code(10, "A1A 1A!") is False
+    assert update_postal_code(3, ",.@ %^*") is False
+    assert update_postal_code(3, "A1A 1A!") is False
 
 
 def test_r3_3_update_user_profile():
@@ -66,14 +66,14 @@ def test_r3_3_update_user_profile():
     If otherwise, fail.
     """
     # Test valid code
-    assert update_postal_code(10, "B2B 2B2") is True
+    assert update_postal_code(3, "B2B 2B2") is True
     # Test various invalid Canadian postal codes
-    assert update_postal_code(10, "AAA 1A1") is False
-    assert update_postal_code(10, "A1A AAA") is False
-    assert update_postal_code(10, "111 1A1") is False
-    assert update_postal_code(10, "A1A 111") is False
-    assert update_postal_code(10, "Invalid A1A 111") is False
-    assert update_postal_code(10, "A1A 111 Invalid") is False
+    assert update_postal_code(3, "AAA 1A1") is False
+    assert update_postal_code(3, "A1A AAA") is False
+    assert update_postal_code(3, "111 1A1") is False
+    assert update_postal_code(3, "A1A 111") is False
+    assert update_postal_code(3, "Invalid A1A 111") is False
+    assert update_postal_code(3, "A1A 111 Invalid") is False
 
 
 def test_r3_4_update_user_profile():
@@ -83,14 +83,14 @@ def test_r3_4_update_user_profile():
     a space as the prefix or suffix, are accepted. If otherwise, fail.
     """
     # Test valid name
-    assert update_username(10, "NormalName") is True
+    assert update_username(3, "NormalName") is True
     # Test length <2 and >20
-    assert update_username(10, "A") is False
-    assert update_username(10, "A" * 21) is False
+    assert update_username(3, "A") is False
+    assert update_username(3, "A" * 21) is False
     # Test empty
-    assert update_username(10, "") is False
+    assert update_username(3, "") is False
     # Test non-alphanumeric chars
-    assert update_username(10, "!ABC&@#") is False
+    assert update_username(3, "!ABC&@#") is False
     # Test spaces as prefix/suffix
-    assert update_username(10, " Prefix") is False
-    assert update_username(10, "Suffix ") is False
+    assert update_username(3, " Prefix") is False
+    assert update_username(3, "Suffix ") is False
