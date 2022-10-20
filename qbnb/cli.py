@@ -17,3 +17,39 @@
 #         print('registration succeeded')
 #     else:
 #         print('regisration failed.')
+
+from qbnb.listing import create_listing
+
+
+def create_listing_page(user_id: int):
+    """
+    An page which allows the current user to create a listing.
+
+    Parameters:
+    user_id (int): The unique ID of the current user.
+
+    Returns:
+    bool: True if the listing creation was successful, False otherwise
+    """
+    # Request title from user
+    title = input('Enter listing title\: ')
+    # Request description from user
+    description = input('Enter listing description\: ')
+    # Request price from user (with error checking)
+    price_ok = False
+    while not price_ok:
+        price = input('Enter listing price: $')
+        # Ensure price is float
+        try:
+            price = float(price)
+            price_ok = True
+        except ValueError:
+            print("Please enter a float for price.")
+    # Attempt to create listing
+    success = create_listing(user_id, title, description, price)
+    if success:
+        print(f'Listing \"{title}\" was created successfully.')
+        return True
+    else:
+        print('Failed to create listing.')
+        return False
