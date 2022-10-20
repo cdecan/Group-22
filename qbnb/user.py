@@ -146,16 +146,16 @@ def register(name, email, password):
     """
     # validating
     if check_email(email) is False:
-        return False
+        return 1
     if check_name(name) is False:
-        return False
+        return 2
     if check_password(password) is False:
-        return False
+        return 3
 
     # check if the email has been used:
     existed = User.query.filter_by(email=email).all()
     if len(existed) > 0:
-        return False
+        return 1
 
     # create a new user
     user = User(username=name, email=email, password=password,

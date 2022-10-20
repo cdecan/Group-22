@@ -16,9 +16,9 @@ def test_r1_1_user_register():
     assert register('u0', 'user0@test.com', 'Test123_') is True
     assert register('u1', 'user1@test.com', 'Test123_') is True
     # empty name
-    assert register('', 'test2@test.com', 'Test123_') is False
+    assert register('', 'test2@test.com', 'Test123_') is not True
     # empty email
-    assert register('u2', '', 'Test123_') is False
+    assert register('u2', '', 'Test123_') is not True
 
 
 def test_r1_2_user_register():
@@ -43,11 +43,11 @@ def test_r1_3_user_register():
     The email has to follow addr-spec defined in RFC 5322
     """
     # illegal email (missing ".")
-    assert register('u0', 'test1@testcom', 'Test123_') is False
+    assert register('u0', 'test1@testcom', 'Test123_') is not True
     # illegal email (multiple @)
-    assert register('u0', 'test1@@test.com', 'Test123_') is False
+    assert register('u0', 'test1@@test.com', 'Test123_') is not True
     # illegal email (missing domain after @)
-    assert register('u0', 'test1@.com', 'Test123_') is False
+    assert register('u0', 'test1@.com', 'Test123_') is not True
 
 
 def test_r1_4_user_register():
@@ -58,21 +58,21 @@ def test_r1_4_user_register():
     # Testing password
     assert register('u0', 'p0@test.com', 'Test123_') is True
     # empty password (falls under password too short)
-    assert register('u0', 'p1@test.com', '') is False
+    assert register('u0', 'p1@test.com', '') is not True
     # missing special character
-    assert register('u0', 'p1@test.com', 'Test123') is False
+    assert register('u0', 'p1@test.com', 'Test123') is not True
     # missing number
-    assert register('u0', 'p1@test.com', 'Test_') is False
+    assert register('u0', 'p1@test.com', 'Test_') is not True
     # missing number and special character
-    assert register('u0', 'p1@test.com', 'Test') is False
+    assert register('u0', 'p1@test.com', 'Test') is not True
     # does not have upper case letter
-    assert register('u0', 'p1@test.com', 'test_dsak123') is False
+    assert register('u0', 'p1@test.com', 'test_dsak123') is not True
     # does not have lower case letter
-    assert register('u0', 'p1@test.com', 'TEST123_') is False
+    assert register('u0', 'p1@test.com', 'TEST123_') is not True
     # one that works to prove username and email is valid
     assert register('u0', 'p1@test.com', 'TESTpassword_123*^%') is True
     # illegal email (missing content before @)
-    assert register('u0', '@test.com', 'Test123_') is False
+    assert register('u0', '@test.com', 'Test123_') is not True
     # one that works to prove username and password is valid
     assert register('u0', 'test3@test.com', 'Test123_') is True
 
@@ -84,13 +84,13 @@ def test_r1_5_user_register():
     and space allowed only if it is not as the prefix or suffix.
     """
     # illegal character
-    assert register('u0.', 'test2@test.com', 'Test123_') is False
+    assert register('u0.', 'test2@test.com', 'Test123_') is not True
     # space as a prefix
-    assert register(' u0', 'test2@test.com', 'Test123_') is False
+    assert register(' u0', 'test2@test.com', 'Test123_') is not True
     # space as a suffix
-    assert register('u0 ', 'test2@test.com', 'Test123_') is False
+    assert register('u0 ', 'test2@test.com', 'Test123_') is not True
     # space as a prefix and suffix
-    assert register(' u0 ', 'test2@test.com', 'Test123_') is False
+    assert register(' u0 ', 'test2@test.com', 'Test123_') is not True
 
 
 def test_r1_6_user_register():
@@ -100,11 +100,11 @@ def test_r1_6_user_register():
     and less than 20 characters.
     """
     # name too short
-    assert register('X', 'test2@test.com', 'Test123_') is False
+    assert register('X', 'test2@test.com', 'Test123_') is not True
     # name too long
     assert register('this is a very long name that the '
                     'program cannot possibly handle',
-                    'test2@test.com', 'Test123_') is False
+                    'test2@test.com', 'Test123_') is not True
     # different variations of allowed names
     assert register('u 0', 'user2@test.com', 'Test123_') is True
     assert register('u   0', 'user3@test.com', 'Test123_') is True
@@ -121,7 +121,7 @@ def test_r1_7_user_register():
     assert register('u0', 'test0@test.com', 'Test123_') is True
     assert register('u0', 'test1@test.com', 'Test123_') is True
     # repeated email
-    assert register('u0', 'test0@test.com', 'Test123_') is False
+    assert register('u0', 'test0@test.com', 'Test123_') is not True
 
 
 def test_r1_8_user_register():

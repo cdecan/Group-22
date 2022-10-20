@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import User, update_username, update_billing_address
 from qbnb.user import update_postal_code, update_email
 from qbnb import app
-from qbnb.user import User
 
 db = SQLAlchemy(app)
 
