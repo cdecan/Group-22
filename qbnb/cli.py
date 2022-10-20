@@ -32,9 +32,9 @@ def create_listing_page(user_id: int):
     bool: True if the listing creation was successful, False otherwise
     """
     # Request title from user
-    title = input('Enter listing title\: ')
+    title = input('Enter listing title: ')
     # Request description from user
-    description = input('Enter listing description\: ')
+    description = input('Enter listing description: ')
     # Request price from user (with error checking)
     price_ok = False
     while not price_ok:
@@ -44,8 +44,8 @@ def create_listing_page(user_id: int):
             price = float(price)
             price_ok = True
         except ValueError:
-            print("Please enter a float for price.")
-    # Attempt to create listing
+            print("(Please enter a float for price)")
+    # Attempt to create listing with given data
     success = create_listing(user_id, title, description, price)
     if success:
         print(f'Listing \"{title}\" was created successfully.')
