@@ -3,7 +3,7 @@ from qbnb.listing import *
 from qbnb.review import *
 from qbnb.booking import *
 from qbnb.user import *
-from qbnb.cli import login_page, register_page
+from qbnb.cli import login_page, register_page, home_page
 
 
 def main():
@@ -15,8 +15,8 @@ def main():
         if selection == '1':
             user = login_page()
             if user:
-                print(f'welcome {user.username}')
-                break
+                print(f'Welcome, {user.username}.')
+                home_page(user.id)
             else:
                 print('login failed')
         elif selection == '2':

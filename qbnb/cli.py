@@ -17,3 +17,37 @@
 #         print('registration succeeded')
 #     else:
 #         print('regisration failed.')
+
+def home_page(user_id: int):
+    """
+    Displays the home page. Gives the user the option to access the listing
+    creation, listing update, and profile update pages.
+
+    Parameters:
+    user_id (int): The unique ID of the calling user
+
+    Returns:
+    None
+    """
+    # Prompt user for user
+    while True:
+        selection = input(
+            'Enter [1] to create a listing.'
+            'Enter [2] to update a listing.'
+            'Enter [3] to update your profile.'
+            'Enter [4] to exit.').strip()
+        # Check input
+        if selection == '1':
+            # Create a listing
+            # create_listing_page(user_id)
+            pass
+        elif selection == '2':
+            # Update a listing
+            # update_listing_page(user_id)
+            pass
+        elif selection == '3':
+            # Update profile
+            pass
+        elif selection == '4':
+            # Exit
+            break
