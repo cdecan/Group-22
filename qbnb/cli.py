@@ -30,55 +30,91 @@ def register_page():
 
 
 def user_profile_update_page(user_id):
-    action = input("Please enter 1 for updating email, "
-                   "2 for updating username, "
-                   "3 for updating billing address, "
-                   "4 for updating postal code: ")
-    action = action.strip()
-    if action == 1:
-        while True:
-            new_email = input("Please enter your new email: ")
-            if check_email(new_email):
-                existed = User.query.filter_by(email=new_email).all()
-                if len(existed) == 0:
-                    if update_email(user_id, new_email):
-                        print("Update successful, "
-                              "your email is now", new_email)
+    """
+    This function allows a user to change their profile.
+
+    Parameters:
+        user_id(int): The unique id of user
+    Returns:
+        None
+    """
+    print('After you have made your selection, '
+          'if you enter \"update selection\" '
+          'you will be able to '
+          'return to selection page again')
+    while True:
+        action = input('Please enter 1 for updating email, '
+                       '2 for updating username, '
+                       '3 for updating billing address, '
+                       '4 for updating postal code,'
+                       '\"end update\"to leave :')
+        if action == 'end update':
+            break
+        action = action.strip()
+        # if selected changing email
+        if action == '1':
+            while True:
+                new_email = input('Please enter your new email: ')
+                # if user wants to go back to selection
+                if new_email == 'update selection':
+                    break
+                # checking if it is a valid email
+                if check_email(new_email):
+                    # checking for dupe emails
+                    existed = User.query.filter_by(email=new_email).all()
+                    if len(existed) == 0:
+                        if update_email(user_id, new_email):
+                            print('Update successful, '
+                                  'your email is now', new_email)
+                            break
+                        else:
+                            print('Error, user does not exist.')
+                            break
+                    else:
+                        print('Email already exists, please try again.')
+                else:
+                    print('Email not valid, please try again.')
+
+        # if selected changing username
+        elif action == '2':
+            while True:
+                new_name = input('Please enter your new user name: ')
+                # if user wants to go back to selection
+                if new_name == 'update selection':
+                    break
+                # checking if name is valid
+                if check_name(new_name):
+                    if update_username(user_id):
+                        print('Update successful, '
+                              'your name is now', new_name)
                         break
                     else:
-                        print("Error, user does not exist")
+                        print('Error, user does not exist.')
                         break
                 else:
-                    print("Email already exists, please try again.")
+                    print('Name is not valid, please try again.')
+
+        # if selected changing address
+        elif action == '3':
+            new_address = input('Please enter your new address: ')
+            # if user wants to go back to selection
+            if new_address == 'update selection':
+                break
+            if update_billing_address(user_id, new_address):
+                print('Update successful, '
+                      'your address is now', new_address)
             else:
-                print("Email not valid, please try again.")
+                print('Error, user does not exist.')
 
-    elif action == 2:
-        while True:
-            new_name = input("Please enter your new user name: ")
-            if check_name(new_name):
-                if update_username(user_id):
-                    print("Update successful, "
-                          "your name is now", new_name)
-                    break
-                else:
-                    print("Error, user does not exist")
-                    break
+        # if selected changing postal code
+        elif action == '4':
+            new_postal_code = input('Please enter your new postal code: ')
+            # if user wants to go back to selection
+            if new_postal_code == 'update selection':
+                break
+            if update_postal_code(user_id, new_postal_code):
+                print('Update successful, '
+                      'your postal code is now', new_postal_code)
             else:
-                print("Name is not valid, please try again.")
-
-    elif action == 3:
-        new_address = input("Please enter your new address: ")
-        if update_billing_address(user_id, new_address):
-            print("Update successful, "
-                  "your address is now", new_address)
-        else:
-            print("Error, user does not exist")
-
-    elif action == 4:
-        new_postal_code = input("Please enter your new postal code: ")
-        if update_billing_address(user_id, new_postal_code):
-            print("Update successful, "
-                  "your address is now", new_postal_code)
-        else:
-            print("Error, user does not exist")
+                print('Error, user does not exist '
+                      'or postal code does not meet requirements.')
