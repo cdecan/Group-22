@@ -119,6 +119,9 @@ def update_listing(listing_id, new_id=None, new_title=None,
         if not (1 <= len(new_title) <= 80):
             return False
 
+        if (len(new_title) >= len(to_update.description)):
+            return False
+
         is_title_taken = Listing.query.filter_by(title=new_title).all()
         if len(is_title_taken) > 0:
             return False
