@@ -142,7 +142,8 @@ def register(name, email, password):
         email (string):    user email
         password (string): user password
       Returns:
-        0 if registration succeeded otherwise an integer representing the error given
+        0 if registration succeeded otherwise an integer
+        representing the error given
     """
     # validating
     if check_email(email) is False:
