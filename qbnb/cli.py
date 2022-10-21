@@ -9,6 +9,15 @@ def login_page():
 
 
 def register_page():
+    """
+    An page which allows a person to create (register) a user.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
     # Get the attributes required for creating a user
     email = input('Please input email: ')
     username = input('Please input username: ')
@@ -35,10 +44,10 @@ def create_listing_page(user_id: int):
     An page which allows the current user to create a listing.
 
     Parameters:
-    user_id (int): The unique ID of the current user.
+        user_id (int): The unique ID of the current user.
 
     Returns:
-    bool: True if the listing creation was successful, False otherwise
+        bool: True if the listing creation was successful, False otherwise
     """
     # Request title from user
     title = input('Enter listing title: ')

@@ -172,6 +172,15 @@ def register(name, email, password):
 
 
 def check_email(email):
+    """
+    Check validity of the given email address.
+
+    Parameters:
+        email (str): email address
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     # check if email or password is empty
     if len(email) == 0:
         return False
@@ -189,6 +198,15 @@ def check_email(email):
 
 
 def check_name(name):
+    """
+    Check validity of the given username.
+
+    Parameters:
+        name (str): User name
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     # validating the username
     if len(name) < 2 or len(name) > 20 or name[0] == " " or name[-1] == " ":
         return False
@@ -200,6 +218,15 @@ def check_name(name):
 
 
 def check_password(password):
+    """
+    Check validity of the given password.
+
+    Parameters:
+        password (str): Password
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     if len(password) == 0:
         return False
     # validating the password using regex
