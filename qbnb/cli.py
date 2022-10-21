@@ -1,3 +1,4 @@
+from qbnb.listing import create_listing
 from qbnb.user import *
 
 
@@ -8,6 +9,15 @@ def login_page():
 
 
 def register_page():
+    """
+    A page which allows a person to create (register) a user.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
     # Get the attributes required for creating a user
     email = input('Please input email: ')
     username = input('Please input username: ')
@@ -47,7 +57,7 @@ def user_profile_update_page(user_id):
                        '2 for updating username, '
                        '3 for updating billing address, '
                        '4 for updating postal code,'
-                       '\"end update\"to leave :')
+                       '\"end update\"to leave: ')
         if action == 'end update':
             break
         action = action.strip()
@@ -118,3 +128,38 @@ def user_profile_update_page(user_id):
             else:
                 print('Error, user does not exist '
                       'or postal code does not meet requirements.')
+
+
+def create_listing_page(user_id: int):
+    """
+    A page which allows the current user to create a listing.
+
+    Parameters:
+        user_id (int): The unique ID of the current user
+
+    Returns:
+        bool: True if the listing creation was successful, False otherwise
+    """
+    # Request title from user
+    title = input('Enter listing title: ')
+    # Request description from user
+    description = input('Enter listing description: ')
+    # Request price from user (with error checking)
+    price_ok = False
+    while not price_ok:
+        price = input('Enter listing price: $')
+        # Ensure price is float
+        try:
+            price = float(price)
+            price_ok = True
+        except ValueError:
+            print("(Please enter a float for price)")
+    # Attempt to create listing with given data
+    success = create_listing(user_id, title, description, price)
+    if success:
+        print(f'Listing \"{title}\" was created successfully.')
+        return True
+    else:
+        print('Failed to create listing.')
+        return False
+
