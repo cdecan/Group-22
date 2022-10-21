@@ -176,7 +176,7 @@ def check_email(email):
     Check validity of the given email address.
 
     Parameters:
-        email (str): email address
+        email (str): Email address
 
     Returns:
         bool: True if valid, False otherwise
