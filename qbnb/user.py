@@ -142,20 +142,21 @@ def register(name, email, password):
         email (string):    user email
         password (string): user password
       Returns:
-        True if registration succeeded otherwise False
+        0 if registration succeeded otherwise an integer
+        representing the error given
     """
     # validating
     if check_email(email) is False:
-        return False
+        return 1
     if check_name(name) is False:
-        return False
+        return 2
     if check_password(password) is False:
-        return False
+        return 3
 
     # check if the email has been used:
     existed = User.query.filter_by(email=email).all()
     if len(existed) > 0:
-        return False
+        return 4
 
     # create a new user
     user = User(username=name, email=email, password=password,
@@ -167,7 +168,7 @@ def register(name, email, password):
     # actually save the user object
     db.session.commit()
 
-    return True
+    return 0
 
 
 def check_email(email):
