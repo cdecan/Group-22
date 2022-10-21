@@ -16,7 +16,7 @@ def register_page():
     if password != password_twice:
         print('password entered not the same')
     # Create new user
-    elif register(username, email, password):
+    elif register(username, email, password) == 0:
         print('registration succeeded')
     # Check for types of failures
     elif register(username, email, password) == 1:

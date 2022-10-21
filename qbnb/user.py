@@ -142,7 +142,7 @@ def register(name, email, password):
         email (string):    user email
         password (string): user password
       Returns:
-        True if registration succeeded otherwise False
+        0 if registration succeeded otherwise an integer representing the error given
     """
     # validating
     if check_email(email) is False:
@@ -167,7 +167,7 @@ def register(name, email, password):
     # actually save the user object
     db.session.commit()
 
-    return True
+    return 0
 
 
 def check_email(email):
