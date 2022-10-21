@@ -9,9 +9,9 @@ def login_page():
 
 def register_page():
     # Get the attributes required for creating a user
-    email = input('Please input email:')
-    username = input('Please input username:')
-    password = input('Please input password:')
+    email = input('Please input email: ')
+    username = input('Please input username: ')
+    password = input('Please input password: ')
     password_twice = input('Please input the password again:')
     if password != password_twice:
         print('password entered not the same')
