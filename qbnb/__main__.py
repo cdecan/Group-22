@@ -10,9 +10,9 @@ def main():
     while True:
         selection = input(
             'Welcome.'
-            'Type [1] to login.'
-            'Type [2] to register.'
-            'Type [3] to exit.'
+            'Enter [1] to login.'
+            'Enter [2] to register.'
+            'Enter [3] to exit.'
             '> ')
         selection = selection.strip()
         if selection == '1':
