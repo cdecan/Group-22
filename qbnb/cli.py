@@ -30,8 +30,10 @@ def register_page():
 
 
 def user_profile_update_page(user_id):
-    action = input("Please enter 1 for updating email, 2 for updating username, "
-                   "3 for updating billing address, 4 for updating postal code: ")
+    action = input("Please enter 1 for updating email, "
+                   "2 for updating username, "
+                   "3 for updating billing address, "
+                   "4 for updating postal code: ")
     action = action.strip()
     if action == 1:
         while True:
