@@ -76,13 +76,12 @@ def create_listing_page(user_id: int):
 def update_listing_page(user_id: int):
     """
     A page which allows the given user to update one of their listings.
-    TODO: Split into different functions & make helper functions
 
     Parameters:
-    user_id (int): The unique ID of the current user
+        user_id (int): The unique ID of the current user
 
     Returns:
-    bool: True if update was successful, False otherwise
+        bool: True if update was successful, False otherwise
     """
     # Print greeting
     print('Leave the below field empty to return.')
