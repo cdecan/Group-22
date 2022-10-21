@@ -3,7 +3,7 @@ from qbnb.listing import *
 from qbnb.review import *
 from qbnb.booking import *
 from qbnb.user import *
-from qbnb.cli import login_page, register_page
+from qbnb.cli import *
 
 
 def main():
