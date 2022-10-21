@@ -12,7 +12,7 @@ def register_page():
     email = input('Please input email: ')
     username = input('Please input username: ')
     password = input('Please input password: ')
-    password_twice = input('Please input the password again:')
+    password_twice = input('Please input the password again: ')
     if password != password_twice:
         print('password entered not the same')
     # Create new user
