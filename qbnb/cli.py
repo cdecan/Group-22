@@ -162,4 +162,3 @@ def create_listing_page(user_id: int):
     else:
         print('Failed to create listing.')
         return False
-
