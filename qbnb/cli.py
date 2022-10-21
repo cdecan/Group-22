@@ -42,7 +42,8 @@ def user_profile_update_page(user_id):
                 existed = User.query.filter_by(email=new_email).all()
                 if len(existed) == 0:
                     if update_email(user_id, new_email):
-                        print("Update successful, your email is now", new_email)
+                        print("Update successful, "
+                              "your email is now", new_email)
                         break
                     else:
                         print("Error, user does not exist")
@@ -57,7 +58,8 @@ def user_profile_update_page(user_id):
             new_name = input("Please enter your new user name: ")
             if check_name(new_name):
                 if update_username(user_id):
-                    print("Update successful, your name is now", new_name)
+                    print("Update successful, "
+                          "your name is now", new_name)
                     break
                 else:
                     print("Error, user does not exist")
@@ -68,13 +70,15 @@ def user_profile_update_page(user_id):
     elif action == 3:
         new_address = input("Please enter your new address: ")
         if update_billing_address(user_id, new_address):
-            print("Update successful, your address is now", new_address)
+            print("Update successful, "
+                  "your address is now", new_address)
         else:
             print("Error, user does not exist")
 
     elif action == 4:
         new_postal_code = input("Please enter your new postal code: ")
         if update_billing_address(user_id, new_postal_code):
-            print("Update successful, your address is now", new_postal_code)
+            print("Update successful, "
+                  "your address is now", new_postal_code)
         else:
             print("Error, user does not exist")
