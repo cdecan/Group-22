@@ -35,7 +35,8 @@ def home_page(user_id: int):
             'Enter [1] to create a listing.'
             'Enter [2] to update a listing.'
             'Enter [3] to update your profile.'
-            'Enter [4] to exit.').strip()
+            'Enter [4] to exit.'
+            '> ').strip()
         # Check input
         if selection == '1':
             # Create a listing
@@ -47,6 +48,7 @@ def home_page(user_id: int):
             pass
         elif selection == '3':
             # Update profile
+            # update_user_profile()
             pass
         elif selection == '4':
             # Exit
