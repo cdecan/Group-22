@@ -10,7 +10,7 @@ def login_page():
 
 def register_page():
     """
-    An page which allows a person to create (register) a user.
+    A page which allows a person to create (register) a user.
 
     Parameters:
         None
@@ -41,7 +41,7 @@ def register_page():
 
 def create_listing_page(user_id: int):
     """
-    An page which allows the current user to create a listing.
+    A page which allows the current user to create a listing.
 
     Parameters:
         user_id (int): The unique ID of the current user.
