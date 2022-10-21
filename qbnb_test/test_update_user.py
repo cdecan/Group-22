@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import User, update_username, update_billing_address
 from qbnb.user import update_postal_code, update_email
 from qbnb import app
-from qbnb.user import User
 
 db = SQLAlchemy(app)
 
@@ -19,7 +18,7 @@ def test_r3_1_update_user_profile():
     Test R3-1: Ensure that, after upading their username, email,
     billing address, and postal code, that no other attributes
     of the user have changed. If they did, fail.
-    """    
+    """
     # Note the initial attributes of this user, for comparison later
     orig_id = user1.id
     orig_email = user1.email
