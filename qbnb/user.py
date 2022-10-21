@@ -36,7 +36,7 @@ app.app_context().push()
 # drop previous table if exists
 # makes sure that no previous data remaining to mess with testing
 # will be removed later when actual data is needed
-db.drop_all()
+#db.drop_all()
 # create table
 db.create_all()
 
