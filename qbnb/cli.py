@@ -44,7 +44,7 @@ def create_listing_page(user_id: int):
     A page which allows the current user to create a listing.
 
     Parameters:
-        user_id (int): The unique ID of the current user.
+        user_id (int): The unique ID of the current user
 
     Returns:
         bool: True if the listing creation was successful, False otherwise
