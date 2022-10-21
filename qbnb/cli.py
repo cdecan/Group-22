@@ -35,10 +35,10 @@ def home_page(user_id: int):
     creation, listing update, and profile update pages.
 
     Parameters:
-    user_id (int): The unique ID of the calling user
+        user_id (int): The unique ID of the calling user
 
     Returns:
-    None
+        None
     """
     # Prompt user for user
     while True:
