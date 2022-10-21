@@ -18,7 +18,7 @@ def register_page():
     # Create new user
     elif register(username, email, password):
         print('registration succeeded')
-    # Check for types of failure
+    # Check for types of failures
     elif register(username, email, password) == 1:
         print('registration failed: invalid email')
     elif register(username, email, password) == 2:
