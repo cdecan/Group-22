@@ -142,20 +142,21 @@ def register(name, email, password):
         email (string):    user email
         password (string): user password
       Returns:
-        True if registration succeeded otherwise False
+        0 if registration succeeded otherwise an integer
+        representing the error given
     """
     # validating
     if check_email(email) is False:
-        return False
+        return 1
     if check_name(name) is False:
-        return False
+        return 2
     if check_password(password) is False:
-        return False
+        return 3
 
     # check if the email has been used:
     existed = User.query.filter_by(email=email).all()
     if len(existed) > 0:
-        return False
+        return 4
 
     # create a new user
     user = User(username=name, email=email, password=password,
@@ -167,10 +168,19 @@ def register(name, email, password):
     # actually save the user object
     db.session.commit()
 
-    return True
+    return 0
 
 
 def check_email(email):
+    """
+    Check validity of the given email address.
+
+    Parameters:
+        email (str): Email address
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     # check if email or password is empty
     if len(email) == 0:
         return False
@@ -188,6 +198,15 @@ def check_email(email):
 
 
 def check_name(name):
+    """
+    Check validity of the given username.
+
+    Parameters:
+        name (str): User name
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     # validating the username
     if len(name) < 2 or len(name) > 20 or name[0] == " " or name[-1] == " ":
         return False
@@ -199,6 +218,15 @@ def check_name(name):
 
 
 def check_password(password):
+    """
+    Check validity of the given password.
+
+    Parameters:
+        password (str): Password
+
+    Returns:
+        bool: True if valid, False otherwise
+    """
     if len(password) == 0:
         return False
     # validating the password using regex

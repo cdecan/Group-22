@@ -26,5 +26,3 @@ class Booking(db.Model):
     def __repr__(self):
         """Each booking will be represented by a unique ID"""
         return '<Booking %r>' % self.id
-
-
