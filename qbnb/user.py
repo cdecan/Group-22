@@ -156,7 +156,7 @@ def register(name, email, password):
     # check if the email has been used:
     existed = User.query.filter_by(email=email).all()
     if len(existed) > 0:
-        return 1
+        return 4
 
     # create a new user
     user = User(username=name, email=email, password=password,

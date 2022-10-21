@@ -14,14 +14,16 @@ def register_page():
     password = input('Please input password: ')
     password_twice = input('Please input the password again: ')
     if password != password_twice:
-        print('password entered not the same')
+        print('Password entered not the same')
     # Create new user
     elif register(username, email, password) == 0:
-        print('registration succeeded')
+        print('Registration succeeded')
     # Check for types of failures
     elif register(username, email, password) == 1:
-        print('registration failed: invalid email')
+        print('Registration failed: invalid email')
     elif register(username, email, password) == 2:
-        print('registration failed: invalid username')
+        print('Registration failed: invalid username')
     elif register(username, email, password) == 3:
-        print('registration failed: invalid password')
+        print('Registration failed: invalid password')
+    elif register(username, email, password) == 4:
+        print('Registration failed: duplicate email')
