@@ -180,12 +180,13 @@ def update_listing_page(user_id: int):
     while not found:
         # Request title from user
         find_title = input('Enter title of listing to edit: ')
+        
         # Exit if blank title was given
         if find_title == '':
             return False
+        
         # Find the listing and ensure its owned by this user
-        matches = Listing.query.filter_by(title=find_title)  # match title
-        to_update = matches.filter_by(owner_id=user_id).first()  # match owner
+        to_update = Listing.query.filter_by(title=find_title, owner_id=user_id).first()
         if to_update is None:
             print('(You do not have a listing with that title)')
         else:
@@ -195,12 +196,13 @@ def update_listing_page(user_id: int):
     id_to_update = to_update.id
     while True:
         selection = input(
-            'Enter [1] to update Listing ID. '
-            'Enter [2] to update Title.'
-            'Enter [3] to update Description.'
-            'Enter [4] to update Price.'
-            'Enter [5] to exit.'
+            'Enter [1] to update Listing ID.\n'
+            'Enter [2] to update Title.\n'
+            'Enter [3] to update Description.\n'
+            'Enter [4] to update Price.\n'
+            'Enter [5] to exit.\n'
             '>').strip()
+        
         if selection == '1':
             # Request new id from user (ensure int)
             valid = False
@@ -212,6 +214,7 @@ def update_listing_page(user_id: int):
                     valid = True
                 except ValueError:
                     print("(ID must be an integer)")
+            
             # Update ID
             success = update_listing(id_to_update, new_id=new_id)
             if success:
@@ -220,18 +223,23 @@ def update_listing_page(user_id: int):
                 id_to_update = new_id
             else:
                 print("Update failed.")
+        
         elif selection == '2':
             # Request new title from user
             new_title = input('Enter a new title: ')
+            
             # Update title
             success = update_listing(id_to_update, new_title=new_title)
             print("Updated title." if success else "Update failed.")
+        
         elif selection == '3':
             # Request new description from user
             new_desc = input('Enter a new description: ')
+            
             # Update description
             success = update_listing(id_to_update, new_description=new_desc)
             print("Updated description." if success else "Update failed.")
+        
         elif selection == '4':
             # Request new price from user (ensure float)
             valid = False
@@ -246,5 +254,6 @@ def update_listing_page(user_id: int):
             # Update price
             success = update_listing(id_to_update, new_price=new_price)
             print("Updated price." if success else "Update failed.")
+        
         elif selection == '5':
             break

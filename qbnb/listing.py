@@ -72,8 +72,8 @@ def create_listing(owner_id, title, description, price):
     return True
 
 
-def update_listing(listing_id, new_id, new_title,
-                   new_description, new_price):
+def update_listing(listing_id, new_id=None, new_title=None,
+                   new_description=None, new_price=None):
     """Allows all attributes of a listing to be updated,
        excluding owner_id and last_modified_date.
 
