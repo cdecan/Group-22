@@ -24,9 +24,9 @@ def test_r1_1_user_register():
 def test_r1_2_user_register():
     """
     Testing if the register function works with r1-2:
-    A user == uniquely identified by his/her user id
+    A user is uniquely identified by his/her user id
     - automatically generated.
-    This == done with the login command because id is
+    This is done with the login command because id is
     auto generated
     """
     user = login('user0@test.com', 'Test123_')
@@ -69,11 +69,11 @@ def test_r1_4_user_register():
     assert register('u0', 'p1@test.com', 'test_dsak123') != 0
     # does not have lower case letter
     assert register('u0', 'p1@test.com', 'TEST123_') != 0
-    # one that works to prove username and email == valid
+    # one that works to prove username and email is valid
     assert register('u0', 'p1@test.com', 'TESTpassword_123*^%') == 0
     # illegal email (missing content before @)
     assert register('u0', '@test.com', 'Test123_') != 0
-    # one that works to prove username and password == valid
+    # one that works to prove username and password is valid
     assert register('u0', 'test3@test.com', 'Test123_') == 0
 
 
@@ -81,7 +81,7 @@ def test_r1_5_user_register():
     """
     Testing if the register function works with r1-5:
     Username has to be non-empty, alphanumeric-only,
-    and space allowed only if it !=  as the prefix or suffix.
+    and space allowed only if it is not as the prefix or suffix.
     """
     # illegal character
     assert register('u0.', 'test2@test.com', 'Test123_') != 0
@@ -127,7 +127,7 @@ def test_r1_7_user_register():
 def test_r1_8_user_register():
     """
     Testing if the register function works with r1-8:
-    Shipping address == empty at the time of registration.
+    Shipping address is empty at the time of registration.
     using login function to test
     """
     user = login('user0@test.com', 'Test123_')
@@ -138,7 +138,7 @@ def test_r1_8_user_register():
 def test_r1_9_user_register():
     """
     Testing if the register function works with r1-9:
-    Postal code == empty at the time of registration.
+    Postal code is empty at the time of registration.
     using login function to test
     """
     user = login('user0@test.com', 'Test123_')
