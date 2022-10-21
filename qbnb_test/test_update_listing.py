@@ -29,7 +29,7 @@ test_listing_3 = Listing(id=13,
                          owner_id=1)
 test_listing_4 = Listing(id=14,
                          title="listing 4",
-                         description="description",
+                         description="descriptiondescriptiondescription",
                          price=20.00,
                          last_modified_date=test_date,
                          owner_id=1)
