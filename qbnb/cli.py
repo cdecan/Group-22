@@ -8,21 +8,21 @@ def user_login_page():
 
     Returns:
         User or None: Returns the user if the login was
-                      successfull and None otherwise
+                      successful and None otherwise
     """
 
     # Gets user input
-    email = input('Please input email')
-    password = input('Please input password:')
+    email = input('Please input email: ')
+    password = input('Please input password: ')
 
     # Attempts to login
     success = login(email, password)
 
     # Informs the user about the login status
     if success is not None:
-        print("Login succesfull")
+        print('Login successful')
     else:
-        print("Login Failed, incorrect email or password")
+        print('Login Failed, incorrect email or password')
 
     # Returns the user if login was successful and None otherwise
     return success
