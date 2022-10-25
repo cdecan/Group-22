@@ -3,8 +3,9 @@ from qbnb.user import *
 
 
 def user_login_page():
-    """This function prompts the user to enter their login details
-       and attempts to log them in using their input.
+    """
+    This function prompts the user to enter their login details
+    and attempts to log them in using their input.
 
     Returns:
         User or None: Returns the user if the login was
@@ -22,7 +23,7 @@ def user_login_page():
     if success is not None:
         print('Login successful')
     else:
-        print('Login Failed, incorrect email or password')
+        print('Login failed, incorrect email or password')
 
     # Returns the user if login was successful and None otherwise
     return success
