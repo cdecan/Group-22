@@ -13,7 +13,7 @@ def main():
             'Or type 2 register. Or type 3 to exit')
         selection = selection.strip()
         if selection == '1':
-            user = login_page()
+            user = user_login_page()
             if user:
                 print(f'welcome {user.username}')
                 break
