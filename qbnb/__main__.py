@@ -16,7 +16,7 @@ def main():
             '> ')
         selection = selection.strip()
         if selection == '1':
-            user = login_page()
+            user = user_login_page()
             if user:
                 print(f'Welcome, {user.username}.')
                 home_page(user.id)

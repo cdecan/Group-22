@@ -2,10 +2,31 @@ from qbnb.listing import create_listing, Listing, update_listing
 from qbnb.user import *
 
 
-def login_page():
-    email = input('Please input email')
-    password = input('Please input password:')
-    return login(email, password)
+def user_login_page():
+    """
+    This function prompts the user to enter their login details
+    and attempts to log them in using their input.
+
+    Returns:
+        User or None: Returns the user if the login was
+                      successful and None otherwise
+    """
+
+    # Gets user input
+    email = input('Please input email: ')
+    password = input('Please input password: ')
+
+    # Attempts to login
+    success = login(email, password)
+
+    # Informs the user about the login status
+    if success is not None:
+        print('Login successful')
+    else:
+        print('Login failed, incorrect email or password')
+
+    # Returns the user if login was successful and None otherwise
+    return success
 
 
 def register_page():
