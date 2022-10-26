@@ -9,10 +9,10 @@ from qbnb.cli import *
 def main():
     while True:
         selection = input(
-            'Welcome.'
-            'Enter [1] to login.'
-            'Enter [2] to register.'
-            'Enter [3] to exit.'
+            'Welcome.\n'
+            'Enter [1] to login.\n'
+            'Enter [2] to register.\n'
+            'Enter [3] to exit.\n'
             '> ')
         selection = selection.strip()
         if selection == '1':
@@ -20,8 +20,6 @@ def main():
             if user:
                 print(f'Welcome, {user.username}.')
                 home_page(user.id)
-            else:
-                print('Login failed.')
         elif selection == '2':
             register_page()
         elif selection == '3':
