@@ -152,7 +152,7 @@ def user_profile_update_page(user_id):
                     break
                 # checking if name is valid
                 if check_name(new_name):
-                    if update_username(user_id):
+                    if update_username(user_id, new_name):
                         print('Update successful, '
                               'your name is now', new_name)
                         break
