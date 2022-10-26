@@ -82,15 +82,15 @@ def home_page(user_id: int):
         # Check input
         if selection == '1':
             # Create a listing
-            # create_listing_page(user_id)
+            create_listing_page(user_id)
             pass
         elif selection == '2':
             # Update a listing
-            # update_listing_page(user_id)
+            update_listing_page(user_id)
             pass
         elif selection == '3':
             # Update profile
-            # update_user_profile()
+            user_profile_update_page(user_id)
             pass
         elif selection == '4':
             # Exit
