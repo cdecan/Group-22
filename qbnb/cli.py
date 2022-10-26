@@ -74,10 +74,10 @@ def home_page(user_id: int):
     # Prompt user for user
     while True:
         selection = input(
-            'Enter [1] to create a listing.'
-            'Enter [2] to update a listing.'
-            'Enter [3] to update your profile.'
-            'Enter [4] to exit.'
+            'Enter [1] to create a listing.\n'
+            'Enter [2] to update a listing.\n'
+            'Enter [3] to update your profile.\n'
+            'Enter [4] to exit.\n'
             '> ').strip()
         # Check input
         if selection == '1':
