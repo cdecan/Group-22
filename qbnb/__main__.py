@@ -9,16 +9,17 @@ from qbnb.cli import *
 def main():
     while True:
         selection = input(
-            'Welcome. Please type 1 to login. '
-            'Or type 2 register. Or type 3 to exit')
+            'Welcome.\n'
+            'Enter [1] to login.\n'
+            'Enter [2] to register.\n'
+            'Enter [3] to exit.\n'
+            '> ')
         selection = selection.strip()
         if selection == '1':
             user = user_login_page()
             if user:
-                print(f'welcome {user.username}')
-                break
-            else:
-                print('login failed')
+                print(f'Welcome, {user.username}.')
+                home_page(user.id)
         elif selection == '2':
             register_page()
         elif selection == '3':

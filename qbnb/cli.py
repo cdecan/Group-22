@@ -60,6 +60,40 @@ def register_page():
         print('Registration failed: duplicate email')
 
 
+def home_page(user_id: int):
+    """
+    Displays the home page. Gives the user the option to access the listing
+    creation, listing update, and profile update pages.
+
+    Parameters:
+        user_id (int): The unique ID of the calling user
+
+    Returns:
+        None
+    """
+    # Prompt user for user
+    while True:
+        selection = input(
+            'Enter [1] to create a listing.\n'
+            'Enter [2] to update a listing.\n'
+            'Enter [3] to update your profile.\n'
+            'Enter [4] to exit.\n'
+            '> ').strip()
+        # Check input
+        if selection == '1':
+            # Create a listing
+            create_listing_page(user_id)
+        elif selection == '2':
+            # Update a listing
+            update_listing_page(user_id)
+        elif selection == '3':
+            # Update profile
+            user_profile_update_page(user_id)
+        elif selection == '4':
+            # Exit
+            break
+
+
 def user_profile_update_page(user_id):
     """
     This function allows a user to change their profile.
@@ -115,7 +149,7 @@ def user_profile_update_page(user_id):
                     break
                 # checking if name is valid
                 if check_name(new_name):
-                    if update_username(user_id):
+                    if update_username(user_id, new_name):
                         print('Update successful, '
                               'your name is now', new_name)
                         break
