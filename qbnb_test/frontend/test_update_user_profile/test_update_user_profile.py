@@ -1,6 +1,20 @@
 from os import popen
 from pathlib import Path
 import subprocess
+from flask_sqlalchemy import SQLAlchemy
+from qbnb import app
+from qbnb.listing import create_listing
+from qbnb.user import User
+
+db = SQLAlchemy(app)
+user1 = User(email="email@email.com", password="Test123_",
+             username="User1", billing_address="",
+             postal_code="", balance=100)
+user2 = User(email="email1@email.com", password="Test123_", username="User2",
+             billing_address="", postal_code="", balance=100)
+db.session.add(user1)
+db.session.add(user2)
+db.session.commit()
 
 # get expected input/output file
 current_folder = Path(__file__).parent
@@ -27,3 +41,24 @@ def test_login():
 
     print('outputs', output)
     assert output.strip() == expected_out.strip()
+
+# 2
+# email@email.com
+# User1
+# Test123_
+# Test123_
+# 2
+# email2@email.com
+# User2
+# Test456_
+# Test456_
+# Welcome.
+# Enter [1] to login.
+# Enter [2] to register.
+# Enter [3] to exit.
+# > Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
+# Welcome.
+# Enter [1] to login.
+# Enter [2] to register.
+# Enter [3] to exit.
+# > Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
