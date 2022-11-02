@@ -75,7 +75,7 @@ def update_username(user_id: int, new_username: str):
     if u is None:
         return False
     # Ensure username between 2-19 characters
-    if (len(new_username) < 2 or len(new_username) >= 20):
+    if (len(new_username) <= 2 or len(new_username) >= 20):
         return False
     # Ensure only alphanumeric characters
     if (not new_username.isalnum()):
@@ -208,7 +208,7 @@ def check_name(name):
         bool: True if valid, False otherwise
     """
     # validating the username
-    if len(name) < 2 or len(name) > 20 or name[0] == " " or name[-1] == " ":
+    if len(name) <= 2 or len(name) >= 20 or name[0] == " " or name[-1] == " ":
         return False
     # to validate that the name without spaces is all alphanumeric
     temp_name = name.replace(" ", "")

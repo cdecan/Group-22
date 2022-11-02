@@ -1,0 +1,126 @@
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login successful
+Welcome, User1.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> After you have made your selection, if you enter "update selection" you will be able to return to selection page again
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new email: Update successful, your email is now newemail@email.com
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new email: Email not valid, please try again.
+Please enter your new email: Email not valid, please try again.
+Please enter your new email: Email not valid, please try again.
+Please enter your new email: Email not valid, please try again.
+Please enter your new email: Email not valid, please try again.
+Please enter your new email: Email not valid, please try again.
+Please enter your new email: Update successful, your email is now newemail2@email.com
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new email: Email already exists, please try again.
+Please enter your new email: Update successful, your email is now newemail3@email.com
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new user name: Update successful, your name is now Usernew
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Name is not valid, please try again.
+Please enter your new user name: Update successful, your name is now Usernew2
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new address: Update successful, your address is now 1 Address Road
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Update successful, your postal code is now L1M 1C1
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Error, user does not exist or postal code does not meet requirements.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Error, user does not exist or postal code does not meet requirements.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Error, user does not exist or postal code does not meet requirements.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Error, user does not exist or postal code does not meet requirements.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Please enter your new postal code: Error, user does not exist or postal code does not meet requirements.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+>

@@ -108,11 +108,12 @@ def user_profile_update_page(user_id):
           'you will be able to '
           'return to selection page again')
     while True:
-        action = input('Please enter 1 for updating email, '
-                       '2 for updating username, '
-                       '3 for updating billing address, '
-                       '4 for updating postal code,'
-                       '\"end update\"to leave: ')
+        action = input('Enter [1] to update email.\n'
+                       'Enter [2] to update username.\n'
+                       'Enter [3] to update billing address.\n'
+                       'Enter [4] to update postal code.\n'
+                       'Enter [end update] to leave.\n'
+                       '> ')
         if action == 'end update':
             break
         action = action.strip()
@@ -133,7 +134,7 @@ def user_profile_update_page(user_id):
                                   'your email is now', new_email)
                             break
                         else:
-                            print('Error, user does not exist.')
+                            print('An unknown error has occurred.')
                             break
                     else:
                         print('Email already exists, please try again.')
@@ -154,7 +155,7 @@ def user_profile_update_page(user_id):
                               'your name is now', new_name)
                         break
                     else:
-                        print('Error, user does not exist.')
+                        print('An unknown error has occurred.')
                         break
                 else:
                     print('Name is not valid, please try again.')
@@ -169,7 +170,7 @@ def user_profile_update_page(user_id):
                 print('Update successful, '
                       'your address is now', new_address)
             else:
-                print('Error, user does not exist.')
+                print('An unknown error has occurred.')
 
         # if selected changing postal code
         elif action == '4':
