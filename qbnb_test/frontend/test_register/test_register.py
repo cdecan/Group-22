@@ -103,7 +103,8 @@ def test_register_r3():
 
 def test_register_r4():
     """R1-4: Password has to meet the required complexity: minimum length 6,
-    at least one upper case, at least one lower case, and at least one special character.
+    at least one upper case, at least one lower case,
+    and at least one special character.
     Tested with input partitioning"""
 
     # P1: too short | no upper | no lower | no special
@@ -172,7 +173,8 @@ def test_register_r5():
 
 
 def test_register_r6():
-    """R1-6: Username has to be longer than 2 characters and less than 20 characters.
+    """R1-6: Username has to be longer than 2 characters
+    and less than 20 characters.
     Tested with input boundary testing"""
 
     # B1: " "
@@ -259,7 +261,8 @@ def test_register_r9():
 
 
 def test_register_r10():
-    """R1-10: Balance should be initialized as 100 at the time of registration. (free $100 dollar signup bonus)."""
+    """R1-10: Balance should be initialized as 100
+     at the time of registration. (free $100 dollar signup bonus)."""
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
