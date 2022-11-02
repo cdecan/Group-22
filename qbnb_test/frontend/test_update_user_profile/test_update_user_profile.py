@@ -64,10 +64,7 @@ def test_login():
 # > Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
 
 
-# 1
-# email@email.com
-# Test123_
-# 3
+
 # 1
 # newemail@email.com
 # 1
