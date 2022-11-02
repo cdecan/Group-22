@@ -1,6 +1,7 @@
 from os import popen
 from pathlib import Path
 import subprocess
+from qbnb.user import login
 
 # get expected input/output file
 current_folder = Path(__file__).parent
@@ -194,3 +195,84 @@ def test_register_r6():
 
     print('outputs', output)
     assert output.strip() == expected_out.strip()
+
+
+def test_register_r7():
+    """R1-7: If the email has been used, the operation failed."""
+
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'R7/test_register.in'))
+    expected_out = open(current_folder.joinpath(
+        'R7/test_register.out'), newline="\r\n").read()
+
+    print(expected_out)
+
+    output = subprocess.run(
+        ['python', '-m', 'qbnb'],
+        stdin=expected_in,
+        capture_output=True,
+    ).stdout.decode()
+
+    print('outputs', output)
+    assert output.strip() == expected_out.strip()
+
+
+def test_register_r8():
+    """R1-8: Shipping address is empty at the time of registration."""
+
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'R8/test_register.in'))
+
+    output = subprocess.run(
+        ['python', '-m', 'qbnb'],
+        stdin=expected_in,
+        capture_output=True,
+    ).stdout.decode()
+
+    user = login('testreg8@test.com', 'Test123!')
+
+    print('outputs', output)
+    assert user is not None
+    assert user.billing_address == ""
+
+
+def test_register_r9():
+    """R1-9: Postal code is empty at the time of registration."""
+
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'R9/test_register.in'))
+
+    output = subprocess.run(
+        ['python', '-m', 'qbnb'],
+        stdin=expected_in,
+        capture_output=True,
+    ).stdout.decode()
+
+    user = login('testreg9@test.com', 'Test123!')
+
+    print('outputs', output)
+    assert user is not None
+    assert user.postal_code == ""
+
+
+def test_register_r10():
+    """R1-10: Balance should be initialized as 100 at the time of registration. (free $100 dollar signup bonus)."""
+
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'R10/test_register.in'))
+
+    output = subprocess.run(
+        ['python', '-m', 'qbnb'],
+        stdin=expected_in,
+        capture_output=True,
+    ).stdout.decode()
+
+    user = login('testreg10@test.com', 'Test123!')
+
+    print('outputs', output)
+    assert user is not None
+    assert user.balance == 100

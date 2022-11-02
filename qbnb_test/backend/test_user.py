@@ -13,12 +13,12 @@ def test_r1_1_user_register():
     Email cannot be empty. password cannot be empty.
     """
     # testing for username in this block
-    assert register('u0', 'user0@test.com', 'Test123_') == 0
-    assert register('u1', 'user1@test.com', 'Test123_') == 0
+    assert register('u00', 'user0@test.com', 'Test123_') == 0
+    assert register('u11', 'user1@test.com', 'Test123_') == 0
     # empty name
     assert register('', 'test2@test.com', 'Test123_') != 0
     # empty email
-    assert register('u2', '', 'Test123_') != 0
+    assert register('u22', '', 'Test123_') != 0
 
 
 def test_r1_2_user_register():
@@ -43,11 +43,11 @@ def test_r1_3_user_register():
     The email has to follow addr-spec defined in RFC 5322
     """
     # illegal email (missing ".")
-    assert register('u0', 'test1@testcom', 'Test123_') != 0
+    assert register('u00', 'test1@testcom', 'Test123_') != 0
     # illegal email (multiple @)
-    assert register('u0', 'test1@@test.com', 'Test123_') != 0
+    assert register('u00', 'test1@@test.com', 'Test123_') != 0
     # illegal email (missing domain after @)
-    assert register('u0', 'test1@.com', 'Test123_') != 0
+    assert register('u00', 'test1@.com', 'Test123_') != 0
 
 
 def test_r1_4_user_register():
@@ -56,25 +56,25 @@ def test_r1_4_user_register():
     Password has to meet the required complexity.
     """
     # Testing password
-    assert register('u0', 'p0@test.com', 'Test123_') == 0
+    assert register('u00', 'p0@test.com', 'Test123_') == 0
     # empty password (falls under password too short)
-    assert register('u0', 'p1@test.com', '') != 0
+    assert register('u00', 'p1@test.com', '') != 0
     # missing special character
-    assert register('u0', 'p1@test.com', 'Test123') != 0
+    assert register('u00', 'p1@test.com', 'Test123') != 0
     # missing number
-    assert register('u0', 'p1@test.com', 'Test_') != 0
+    assert register('u00', 'p1@test.com', 'Test_') != 0
     # missing number and special character
-    assert register('u0', 'p1@test.com', 'Test') != 0
+    assert register('u00', 'p1@test.com', 'Test') != 0
     # does not have upper case letter
-    assert register('u0', 'p1@test.com', 'test_dsak123') != 0
+    assert register('u00', 'p1@test.com', 'test_dsak123') != 0
     # does not have lower case letter
-    assert register('u0', 'p1@test.com', 'TEST123_') != 0
+    assert register('u00', 'p1@test.com', 'TEST123_') != 0
     # one that works to prove username and email is valid
-    assert register('u0', 'p1@test.com', 'TESTpassword_123*^%') == 0
+    assert register('u00', 'p1@test.com', 'TESTpassword_123*^%') == 0
     # illegal email (missing content before @)
-    assert register('u0', '@test.com', 'Test123_') != 0
+    assert register('u00', '@test.com', 'Test123_') != 0
     # one that works to prove username and password is valid
-    assert register('u0', 'test3@test.com', 'Test123_') == 0
+    assert register('u00', 'test3@test.com', 'Test123_') == 0
 
 
 def test_r1_5_user_register():
@@ -118,10 +118,10 @@ def test_r1_7_user_register():
     If the email has been used, the operation failed.
     """
     # testing for email in this block
-    assert register('u0', 'test0@test.com', 'Test123_') == 0
-    assert register('u0', 'test1@test.com', 'Test123_') == 0
+    assert register('u00', 'test0@test.com', 'Test123_') == 0
+    assert register('u00', 'test1@test.com', 'Test123_') == 0
     # repeated email
-    assert register('u0', 'test0@test.com', 'Test123_') != 0
+    assert register('u00', 'test0@test.com', 'Test123_') != 0
 
 
 def test_r1_8_user_register():
@@ -168,7 +168,7 @@ def test_r2_1_login():
 
     user = login('user0@test.com', 'Test123_')
     assert user is not None
-    assert user.username == 'u0'
+    assert user.username == 'u00'
 
     user = login('userthatdontexist@test.com', 'ThisPassword_')
     assert user is None
