@@ -62,3 +62,47 @@ def test_login():
 # Enter [2] to register.
 # Enter [3] to exit.
 # > Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
+
+
+# 1
+# email@email.com
+# Test123_
+# 3
+# 1
+# newemail@email.com
+# 1
+# thisemailcannotbeaccepted
+#
+# bademail@
+# bademail@email
+# bademail@.com
+# @bademail.com
+# newemail2@email.com
+# 1
+# email2@email.com
+# newemail3@email.com
+# Enter [1] to update email.
+# Enter [2] to update username.
+# Enter [3] to update billing address.
+# Enter [4] to update postal code.
+# Enter [end update] to leave.
+# > Please enter your new email: Update successful, your email is now newemail@email.com
+# Enter [1] to update email.
+# Enter [2] to update username.
+# Enter [3] to update billing address.
+# Enter [4] to update postal code.
+# Enter [end update] to leave.
+# > Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Email not valid, please try again.
+# Please enter your new email: Update successful, your email is now newemail2@email.com
+# Enter [1] to update email.
+# Enter [2] to update username.
+# Enter [3] to update billing address.
+# Enter [4] to update postal code.
+# Enter [end update] to leave.
+# > Please enter your new email: Email already exists, please try again.
+# Please enter your new email: Update successful, your email is now newemail3@email.com

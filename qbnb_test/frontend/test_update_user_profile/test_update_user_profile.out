@@ -14,31 +14,6 @@ Enter [2] to update username.
 Enter [3] to update billing address.
 Enter [4] to update postal code.
 Enter [end update] to leave.
-> Please enter your new email: Update successful, your email is now newemail@email.com
-Enter [1] to update email.
-Enter [2] to update username.
-Enter [3] to update billing address.
-Enter [4] to update postal code.
-Enter [end update] to leave.
-> Please enter your new email: Email not valid, please try again.
-Please enter your new email: Email not valid, please try again.
-Please enter your new email: Email not valid, please try again.
-Please enter your new email: Email not valid, please try again.
-Please enter your new email: Email not valid, please try again.
-Please enter your new email: Email not valid, please try again.
-Please enter your new email: Update successful, your email is now newemail2@email.com
-Enter [1] to update email.
-Enter [2] to update username.
-Enter [3] to update billing address.
-Enter [4] to update postal code.
-Enter [end update] to leave.
-> Please enter your new email: Email already exists, please try again.
-Please enter your new email: Update successful, your email is now newemail3@email.com
-Enter [1] to update email.
-Enter [2] to update username.
-Enter [3] to update billing address.
-Enter [4] to update postal code.
-Enter [end update] to leave.
 > Please enter your new user name: Update successful, your name is now Usernew
 Enter [1] to update email.
 Enter [2] to update username.
