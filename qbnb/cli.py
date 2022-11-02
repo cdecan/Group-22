@@ -46,18 +46,20 @@ def register_page():
     password_twice = input('Please input the password again: ')
     if password != password_twice:
         print('Password entered not the same')
-    # Create new user
-    elif register(username, email, password) == 0:
-        print('Registration succeeded')
-    # Check for types of failures
-    elif register(username, email, password) == 1:
-        print('Registration failed: invalid email')
-    elif register(username, email, password) == 2:
-        print('Registration failed: invalid username')
-    elif register(username, email, password) == 3:
-        print('Registration failed: invalid password')
-    elif register(username, email, password) == 4:
-        print('Registration failed: duplicate email')
+    else:
+        result = register(username, email, password)
+        # Create new user
+        if result == 0:
+            print('Registration succeeded')
+        # Check for types of failures
+        if result == 1:
+            print('Registration failed: invalid email')
+        if result == 2:
+            print('Registration failed: invalid username')
+        if result == 3:
+            print('Registration failed: invalid password')
+        if result == 4:
+            print('Registration failed: duplicate email')
 
 
 def home_page(user_id: int):

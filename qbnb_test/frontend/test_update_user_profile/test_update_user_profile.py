@@ -14,7 +14,7 @@ expected_out = open(current_folder.joinpath(
 print(expected_out)
 
 
-def test_login():
+def test_update_user_profile():
     """capsys -- object created by pytest to
     capture stdout and stderr"""
 
