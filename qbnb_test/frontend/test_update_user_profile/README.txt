@@ -6,3 +6,5 @@ Then I did output partitioning, I tested for every single possible output except
 how to trigger unknown error. I also tested for input partitioning, I tested for possible inputs in the menu as well as
 in email changing, name changing, and postal code changing. I did not test multiple inputs for address because there is
 no requirements for address.
+Specifically, on line 16 to line 28, I did output partitioning, and also as much input as I can for possible problems.
+On line 30-39, I also did the same thing as above. Line 36 and 38 are for boundary testing
