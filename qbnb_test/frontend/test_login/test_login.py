@@ -1,24 +1,38 @@
 from os import popen
 from pathlib import Path
 import subprocess
+from qbnb.user import register
+
+
+register('TestLoginUser', 'tlu@test.com', 'Password1_')
+
 
 # get expected input/output file
 current_folder = Path(__file__).parent
 
 
-# read expected in/out
-expected_in = open(current_folder.joinpath(
-    'test_login.in'))
-expected_out = open(current_folder.joinpath(
-    'test_login.out')).read()
+def test_R1():
+    """
+        R1 - A user can log in using her/his 
+             email address and the password.
 
-print(expected_out)
+        This requirement is tested using input partition testing.
 
+        Order:
+        !email !Password
+        !email password
+        email !password
+        email password
+    """
 
-def test_login():
-    """capsys -- object created by pytest to
-    capture stdout and stderr"""
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'cases/R1/test_login.in'))
+    expected_out = open(current_folder.joinpath(
+        'cases/R1/test_login.out'), newline="\r\n").read()
 
+    print(expected_out)
+    
     # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
