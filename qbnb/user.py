@@ -74,7 +74,7 @@ def update_username(user_id: int, new_username: str):
     u = User.query.filter_by(id=user_id).first()
     if u is None:
         return False
-    # Ensure username between 2-19 characters
+    # Ensure username between 3-19 characters
     if (len(new_username) <= 2 or len(new_username) >= 20):
         return False
     # Ensure only alphanumeric characters
