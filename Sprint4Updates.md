@@ -41,14 +41,26 @@ review other members' pull requests, create the markdown file that describes the
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
+`test_login_page_haiden`
+
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
+Wrote four test cases for R2-1. Used input partition testing.
 
 ### 3. any difficulties.
 
+- I ran into issues with duplicate lines when creating the output file.
+- I changed the email for the test user in the test code and forgot to change it in the test input file.
 
 ### 4. what is the plan for the days before the deadline.
+
+- Make test cases for R2-2.
+- Make test cases for the update listing page.
+- Make a `README.md` file explaining my chosen test cases.
+- Make pull request for testing user login.
+- Make pull request for testing update listing.
+- Review assigned pull requests.
 
 # Kennan
 
