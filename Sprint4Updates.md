@@ -53,12 +53,17 @@ review other members' pull requests, create the markdown file that describes the
 # Kennan
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
-
+- `Test_Create_Listing_Page`
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
-
+- Have written functioning test cases for R4-2, R4-3, and R4-5 from Sprint-2. Thus far have used Input Boundary Testing and Output Partition Testing.
 
 ### 3. any difficulties.
-
+- Ran into some difficulties while manually constructing the `*.in` and `*.out` files (had some duplicate/missing lines).
+- Encountered some confusion regarding certain test methods, as not all CLI errors are explicit as to what the true error was (eg. just saying "Failed to create listing", but not saying *why*)
+- Had some issues with GitHub itself slowly dying as we were using it (they appear to be having widespread outages)
 
 ### 4. what is the plan for the days before the deadline.
+- Write the remaining R4 test cases from Sprint-2
+- Properly fill out (and improve formatting) of `README.md` file in test directory (explains which parts of `*.in` file test what, and the reasoning behind it)
+- Create PR and review other's PRs
