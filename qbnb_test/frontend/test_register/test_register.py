@@ -13,9 +13,9 @@ def test_register_r1():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R1/test_register.in'))
+        'cases', 'R1', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R1/test_register.out'), newline="\r\n").read()
+        'cases', 'R1', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -50,9 +50,9 @@ def test_register_r2():
     # then they must have unique IDs
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R2/test_register.in'))
+        'cases', 'R2', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R2/test_register.out'), newline="\r\n").read()
+        'cases', 'R2', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -85,9 +85,9 @@ def test_register_r3():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R3/test_register.in'))
+        'cases', 'R3', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R3/test_register.out'), newline="\r\n").read()
+        'cases', 'R3', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -127,9 +127,9 @@ def test_register_r4():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R4/test_register.in'))
+        'cases', 'R4', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R4/test_register.out'), newline="\r\n").read()
+        'cases', 'R4', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -156,9 +156,9 @@ def test_register_r5():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R5/test_register.in'))
+        'cases', 'R5', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R5/test_register.out'), newline="\r\n").read()
+        'cases', 'R5', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -183,9 +183,9 @@ def test_register_r6():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R6/test_register.in'))
+        'cases', 'R6', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R6/test_register.out'), newline="\r\n").read()
+        'cases', 'R6', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -204,9 +204,9 @@ def test_register_r7():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R7/test_register.in'))
+        'cases', 'R7', 'test_register.in'))
     expected_out = open(current_folder.joinpath(
-        'cases/R7/test_register.out'), newline="\r\n").read()
+        'cases', 'R7', 'test_register.out'), newline="\r\n").read()
 
     print(expected_out)
 
@@ -225,7 +225,7 @@ def test_register_r8():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R8/test_register.in'))
+        'cases', 'R8', 'test_register.in'))
 
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
@@ -245,7 +245,7 @@ def test_register_r9():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R9/test_register.in'))
+        'cases', 'R9', 'test_register.in'))
 
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
@@ -266,7 +266,7 @@ def test_register_r10():
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
-        'cases/R10/test_register.in'))
+        'cases', 'R10', 'test_register.in'))
 
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
