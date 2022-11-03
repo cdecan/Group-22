@@ -80,3 +80,5 @@ Wrote four test cases for R2-1. Used input partition testing.
 - Write the remaining R4 test cases from Sprint-2
 - Properly fill out (and improve formatting) of `README.md` file in test directory (explains which parts of `*.in` file test what, and the reasoning behind it)
 - Create PR and review other's PRs
+
+![image](Sprint4ScrumBoard.png)
