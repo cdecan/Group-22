@@ -1,0 +1,65 @@
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: 
+Please input username: Please input password: Please input the password again: Registration succeeded
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login successful
+Welcome, createlistingtest.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Listing "80808080808080808080808080808080808080808080808080808080808080808080808080808080" was created successfully.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Failed to create listing.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Listing "ThisIsAValidAndCoolTitle" was created successfully.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Failed to create listing.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Failed to create listing.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Listing "ThisIsAValidTitlePrice2" was created successfully.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Listing "ThisIsAValidTitlePrice3" was created successfully.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Failed to create listing.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> 
