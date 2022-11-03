@@ -1,21 +1,22 @@
-"""
 from os import popen
 from pathlib import Path
 import subprocess
 
-# get expected input/output file
-current_folder = Path(__file__).parent
 
+def test_create_listing():
+    """
+    Covers all 8 test requirements, using several different
+    black-box testing methods. See README.md for details.
+    """
 
-# read expected in/out
-expected_in = open(current_folder.joinpath(
-    'test_login.in'))
-expected_out = open(current_folder.joinpath(
-    'test_login.out')).read()
+    # get expected input/output file
+    current_folder = Path(__file__).parent
 
-def test_login():
-    """capsys -- object created by pytest to
-    capture stdout and stderr"""
+    # read expected in/out
+    expected_in = open(current_folder.joinpath(
+        'test_create_listing.in'))
+    expected_out = open(current_folder.joinpath(
+        'test_create_listing.out'), newline="\r\n").read()
 
     # pip the input
     output = subprocess.run(
@@ -24,6 +25,6 @@ def test_login():
         capture_output=True,
     ).stdout.decode()
 
+    # make assertion(s)
     print('outputs', output)
     assert output.strip() == expected_out.strip()
-"""
