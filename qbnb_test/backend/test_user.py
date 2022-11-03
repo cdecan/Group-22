@@ -13,11 +13,11 @@ def test_r1_1_user_register():
     """
     # testing for username in this block
     assert register('u00', 'user0@test.com', 'Test123_') == 0
-    assert register('u01', 'user1@test.com', 'Test123_') == 0
+    assert register('u11', 'user1@test.com', 'Test123_') == 0
     # empty name
     assert register('', 'test2@test.com', 'Test123_') != 0
     # empty email
-    assert register('u02', '', 'Test123_') != 0
+    assert register('u22', '', 'Test123_') != 0
 
 
 def test_r1_2_user_register():
