@@ -44,7 +44,11 @@ def test_register_r1():
 
 def test_register_r2():
     """R1-2: A user is uniquely identified by his/her user id.
-    """
+    Tested with input partition testing"""
+
+    # R1: Users are created
+    # if they are created, then they must have unique IDs
+    # if they are not created then they have no IDs anyways
 
     # userID is unique so if two users are able to exist,
     # then they must have unique IDs
@@ -205,7 +209,11 @@ def test_register_r6():
 
 
 def test_register_r7():
-    """R1-7: If the email has been used, the operation failed."""
+    """R1-7: If the email has been used, the operation failed.
+    Tested with output partitioning"""
+
+    # P1: Email succeeds
+    # P2: Email is already used
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
@@ -227,7 +235,11 @@ def test_register_r7():
 
 
 def test_register_r8():
-    """R1-8: Shipping address is empty at the time of registration."""
+    """R1-8: Shipping address is empty at the time of registration.
+    Tested with input partition testing"""
+
+    # R1: User is created
+    # Then check for shipping address
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
@@ -250,7 +262,11 @@ def test_register_r8():
 
 
 def test_register_r9():
-    """R1-9: Postal code is empty at the time of registration."""
+    """R1-9: Postal code is empty at the time of registration.
+    Tested with input partition testing"""
+
+    # R1: User is created
+    # Then check for postal code
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
@@ -274,7 +290,11 @@ def test_register_r9():
 
 def test_register_r10():
     """R1-10: Balance should be initialized as 100
-     at the time of registration. (free $100 dollar signup bonus)."""
+     at the time of registration. (free $100 dollar signup bonus).
+     Tested with input partition testing"""
+
+    # R1: User is created
+    # Then check for postal code
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
