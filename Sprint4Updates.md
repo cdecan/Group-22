@@ -2,15 +2,21 @@
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
+test_update_user_profile
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
+Completed requirements:
+validating email, username and postal code. About 20 test cases.
 
 ### 3. any difficulties.
 
+Being unable to write comments in the .in and .out files made it hard to annotate the test cases and make it clear.
+Something in test_listing.py conflicted with the new test cases so the old code had to be changed.
 
 ### 4. what is the plan for the days before the deadline.
 
+implement more test cases and improve the readme file
 
 # Connor
 
