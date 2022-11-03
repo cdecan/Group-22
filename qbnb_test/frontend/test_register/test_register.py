@@ -56,6 +56,7 @@ def test_register_r2():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -91,6 +92,7 @@ def test_register_r3():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -133,6 +135,7 @@ def test_register_r4():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -162,6 +165,7 @@ def test_register_r5():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -189,6 +193,7 @@ def test_register_r6():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -210,6 +215,7 @@ def test_register_r7():
 
     print(expected_out)
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
@@ -227,12 +233,15 @@ def test_register_r8():
     expected_in = open(current_folder.joinpath(
         'cases', 'R8', 'test_register.in'))
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
         capture_output=True,
     ).stdout.decode()
 
+    # create a user to access the billing address
+    # attribute to see if it is none
     user = login('testreg8@test.com', 'Test123!')
 
     print('outputs', output)
@@ -247,12 +256,15 @@ def test_register_r9():
     expected_in = open(current_folder.joinpath(
         'cases', 'R9', 'test_register.in'))
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
         capture_output=True,
     ).stdout.decode()
 
+    # create a user to access the postal code
+    # attribute to see if it is none
     user = login('testreg9@test.com', 'Test123!')
 
     print('outputs', output)
@@ -268,12 +280,15 @@ def test_register_r10():
     expected_in = open(current_folder.joinpath(
         'cases', 'R10', 'test_register.in'))
 
+    # pip the input
     output = subprocess.run(
         ['python', '-m', 'qbnb'],
         stdin=expected_in,
         capture_output=True,
     ).stdout.decode()
 
+    # create a user to access the balance
+    # attribute to see if it is 100
     user = login('testreg10@test.com', 'Test123!')
 
     print('outputs', output)
