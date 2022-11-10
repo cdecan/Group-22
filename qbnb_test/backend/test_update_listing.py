@@ -216,7 +216,7 @@ def test_r5_4_update_listing():
                           None) is True
     assert update_listing(14,
                           None,
-                          "T",
+                          "",
                           "Desc",
                           None) is False
     desc_over_2000 = ""
