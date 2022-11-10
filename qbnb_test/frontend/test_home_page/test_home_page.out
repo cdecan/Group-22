@@ -24,7 +24,12 @@ Enter [2] to update a listing.
 Enter [3] to update your profile.
 Enter [4] to exit.
 > After you have made your selection, if you enter "update selection" you will be able to return to selection page again
-Please enter 1 for updating email, 2 for updating username, 3 for updating billing address, 4 for updating postal code,"end update"to leave: Enter [1] to create a listing.
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
 Enter [4] to exit.
