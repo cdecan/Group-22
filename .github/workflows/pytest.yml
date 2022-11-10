@@ -20,4 +20,7 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest qbnb_test/backend/test_listing.py qbnb_test/backend/test_user.py qbnb_test/backend/test_update_user.py qbnb_test/backend/test_update_listing.py qbnb_test/frontend/test_create_listing/test_create_listing.py
+        pytest qbnb_test/backend/test_listing.py qbnb_test/backend/test_user.py qbnb_test/backend/test_update_user.py qbnb_test/backend/test_update_listing.py
+        pytest qbnb_test/frontend/test_create_listing/test_create_listing.py
+        pytest qbnb_test/frontend/test_update_user_profile/test_update_user_profile.py
+        pytest qbnb_test/frontend/test_register
