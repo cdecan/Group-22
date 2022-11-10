@@ -33,4 +33,6 @@ Lines `1` - `8` are boilerplate code - creating a user so we may create listings
 	- Tested using direct back-end access (see `frontend/test_create_listing.py`)
 	- Ensure that owner_email is defined and valid upon creation
 - **R4-8:  Lines `53` - `60`**
-	- Yes/No; attempt to create two listing with the same title; first should pass, second should fail.
+	- Output Parition Testing
+	- Output Partitions: Success, Failure.
+	- Attempt to create two listing with the same title; first should pass, second should fail.
