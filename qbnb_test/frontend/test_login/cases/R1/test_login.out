@@ -1,0 +1,26 @@
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login failed, incorrect email or password
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login failed, incorrect email or password
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login failed, incorrect email or password
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login successful
+Welcome, TestLoginUser.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> 
