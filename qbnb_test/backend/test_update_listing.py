@@ -1,14 +1,13 @@
 from flask_sqlalchemy import SQLAlchemy
 from qbnb.listing import Listing
 from qbnb.listing import update_listing
-# from qbnb.user import User
 import datetime
 from qbnb import app
 
 db = SQLAlchemy(app)
 
 
-test_date = datetime.datetime(2021, 8, 5).date()
+test_date = datetime.datetime(2021, 8, 5)
 test_listing_1 = Listing(id=11,
                          title="listing 1",
                          description="description",
@@ -240,10 +239,9 @@ def test_r5_4_update_listing():
     # R4-6
     temp = Listing.query.filter_by(id=14).first()
     temp = temp.last_modified_date
-    temp = temp.strftime("%Y-%m-%d")
-    temp = temp.replace('-', '')
-    temp = int(temp)
-    assert 20210102 < temp < 20250102
+    lower_bound = datetime.datetime(2021, 1, 2)
+    upper_bound = datetime.datetime(2025, 1, 1, 23, 59, 59)
+    assert lower_bound <= temp <= upper_bound
 
     # R4-7
     assert update_listing(15, None, None, None, 25.00) is False

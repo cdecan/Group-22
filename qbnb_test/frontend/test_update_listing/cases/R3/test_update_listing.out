@@ -1,0 +1,24 @@
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login successful
+Welcome, TestLoginUser.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Leave the below field empty to return.
+Enter title of listing to edit: Now editing "<Listing 'Listing5'>"
+Enter [1] to update Listing ID.
+Enter [2] to update Title.
+Enter [3] to update Description.
+Enter [4] to update Price.
+Enter [5] to exit.
+>Enter a new price: Updated price.
+Enter [1] to update Listing ID.
+Enter [2] to update Title.
+Enter [3] to update Description.
+Enter [4] to update Price.
+Enter [5] to exit.
+>
