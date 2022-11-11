@@ -56,9 +56,9 @@
 │   │   │   │   │   ├── test_register.in  
 │   │   │   │   │   └── test_register.out  
 │   │   │   │   ├── R3  
-│   │   │   │   │   ├── test_register.in
-│   │   │   │   │   └── test_register.out
-│   │   │   │   ├── R4
+│   │   │   │   │   ├── test_register.in  
+│   │   │   │   │   └── test_register.out  
+│   │   │   │   ├── R4  
 │   │   │   │   │   ├── test_register.in  
 │   │   │   │   │   └── test_register.out  
 │   │   │   │   ├── R5  
