@@ -37,16 +37,16 @@
 │   │   │   ├── test_home_page.in        ======> Series of inputs for testing all "home page" requirements
 │   │   │   ├── test_home_page.out       ======> Expected output from all inputs
 │   │   │   └── test_home_page.py        ======> Executes input/output verification for home page
-│   │   ├── test_login  
-│   │   │   ├── cases  
-│   │   │   │   ├── R1  
-│   │   │   │   │   ├── test_login.in  
-│   │   │   │   │   └── test_login.out  
-│   │   │   │   └── R2  
-│   │   │   │       ├── test_login.in  
-│   │   │   │       └── test_login.out  
+│   │   ├── test_login    ======> This directory contains all the code to test the frontend of the login function.
+│   │   │   ├── cases
+│   │   │   │   ├── R1    ======> This directory contains all the input cases and expected outputs for test_R1() in test_login.py
+│   │   │   │   │   ├── test_login.in
+│   │   │   │   │   └── test_login.out
+│   │   │   │   └── R2    ======> This directory contains all the input cases and expected outputs for test_R2() in test_login.py
+│   │   │   │       ├── test_login.in
+│   │   │   │       └── test_login.out
 │   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
-│   │   │   └── test_login.py  
+│   │   │   └── test_login.py    ======> This file executes all the test cases for login
 │   │   ├── test_register            ======> Tests for the user register page (More info in comments)
 │   │   │   ├── cases            ======> Cases pulled from A2 register function
 │   │   │   │   ├── R1          ======> Test R1-1: Email cannot be empty. password cannot be empty.
@@ -78,21 +78,21 @@
 │   │   │   │       └── test_register.in            ======> Input for R1-9
 │   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
 │   │   │   └── test_register.py  
-│   │   ├── test_update_listing  
-│   │   │   ├── cases  
-│   │   │   │   ├── R1  
+│   │   ├── test_update_listing    ======> This directory contains all the code to test the frontend of the update_listing function.
+│   │   │   ├── cases
+│   │   │   │   ├── R1    ======> This directory contains all the input cases and expected outputs for test_R1() in test_update_listing.py
 │   │   │   │   │   ├── test_update_listing.in  
 │   │   │   │   │   └── test_update_listing.out  
-│   │   │   │   ├── R2  
+│   │   │   │   ├── R2    ======> This directory contains all the input cases and expected outputs for test_R2() in test_update_listing.py
 │   │   │   │   │   ├── test_update_listing.in  
 │   │   │   │   │   └── test_update_listing.out  
-│   │   │   │   ├── R3  
+│   │   │   │   ├── R3    ======> This directory contains all the input cases and expected outputs for test_R3() in test_update_listing.py
 │   │   │   │   │   ├── test_update_listing.in  
 │   │   │   │   │   └── test_update_listing.out  
-│   │   │   │   └── R4  
+│   │   │   │   └── R4    ======> This directory contains all the input cases and expected outputs for test_R4() in test_update_listing.py
 │   │   │   │       ├── test_update_listing.in  
 │   │   │   │       └── test_update_listing.out  
-│   │   │   └── test_update_listing.py  
+│   │   │   └── test_update_listing.py    ======> This file executes all the test cases for update_listing
 │   │   └── test_update_user_profile      ======> Tests for update user profile page
 │   │       ├── __init__.py        ======> Required for a python module (can be empty)
 │   │       ├── README.md              ======> Explanations for tests (read this)
