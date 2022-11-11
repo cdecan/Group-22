@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from qbnb.user import User
-from datetime import date
+import datetime
 from qbnb import app
 
 # setting up SQLAlchemy and data models
@@ -21,7 +21,7 @@ class Listing(db.Model):
     # each listing has a price
     price = db.Column(db.Float, nullable=False)
     # each listing has a last modified date
-    last_modified_date = db.Column(db.Date, nullable=True)
+    last_modified_date = db.Column(db.DateTime, nullable=True)
     # each listing has an owner with a unique id
     owner_id = db.Column(db.Integer, db.ForeignKey(User.id),
                          nullable=True)
@@ -62,7 +62,7 @@ def create_listing(owner_id, title, description, price):
     if price < 10 or price > 10000:
         return False
     # product was just created
-    last_modified_date = date.today()
+    last_modified_date = datetime.datetime.now()
 
     # listing is ok -> make listing
     listing = Listing(title=title, description=description, price=price,
@@ -145,14 +145,13 @@ def update_listing(listing_id, new_id=None, new_title=None,
         to_update.price = new_price
 
     # Updates the last modified date
-    current_date = date.today()
-    temp = current_date.strftime("%Y-%m-%d")
-    temp = temp.replace('-', '')
-    temp = int(temp)
+    current_date = datetime.datetime.now()
+    lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
+    upper_bound = datetime.datetime(2025, 1, 2)
     # Compares the current date with the required date range
-    if not (20210102 < temp < 20250102):
+    if not (lower_bound < current_date < upper_bound):
         return False
-
+        
     to_update.last_modified_date = current_date
 
     db.session.commit()
