@@ -47,7 +47,7 @@
 │   │   │   │       └── test_login.out  
 │   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
 │   │   │   └── test_login.py  
-│   │   ├── test_register            ======> Tests for the user register page
+│   │   ├── test_register            ======> Tests for the user register page (More info in comments)
 │   │   │   ├── cases            ======> Cases pulled from A2 register function
 │   │   │   │   ├── R1          ======> Test R1-1: Email cannot be empty. password cannot be empty.
 │   │   │   │   │   ├── test_register.in          ======> Input for R1-1
@@ -93,12 +93,12 @@
 │   │   │   │       ├── test_update_listing.in  
 │   │   │   │       └── test_update_listing.out  
 │   │   │   └── test_update_listing.py  
-│   │   └── test_update_user_profile  
-│   │       ├── __init__.py        ======> Required for a python module (can be empty)
-│   │       ├── README.md  
-│   │       ├── test_update_user_profile.in  
-│   │       ├── test_update_user_profile.out  
-│   │       └── test_update_user_profile.py  
+│   │   └── test_update_user_profile      ======> Tests for update user profile page
+│   │       ├── __init__.py        ======> Required for a python module (can be empty)
+│   │       ├── README.md              ======> Explanations for tests (read this)
+│   │       ├── test_update_user_profile.in              ======> Input for all tests
+│   │       ├── test_update_user_profile.out              ======> Output for all tests
+│   │       └── test_update_user_profile.py  
 │   ├── __init__.py        ======> Required for a python module (can be empty)
 ├── requirements.txt  
 ├── Sprint4ScrumBoard.png  
