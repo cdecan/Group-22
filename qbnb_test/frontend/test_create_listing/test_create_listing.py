@@ -2,7 +2,7 @@ from pathlib import Path
 import subprocess
 from qbnb.listing import Listing
 from qbnb.user import User
-from datetime import date
+from datetime import datetime
 
 
 def test_create_listing():
@@ -35,9 +35,9 @@ def test_create_listing():
 
     # R4-6: assert date within range
     # TODO: Check for timezone consistency issues
-    after = date(2021, 1, 2)
-    before = date(2025, 1, 2)
-    assert (after < to_check.last_modified_date < before)
+    after = datetime(2021, 1, 2, 23, 59, 59)
+    before = datetime(2025, 1, 2, 0, 0, 0)
+    assert (after < last_modified_date < before)
 
     # R4-7: assert owner_email is not empty & exists within database
     owner = User.query.filter_by(id=to_check.owner_id).first()
