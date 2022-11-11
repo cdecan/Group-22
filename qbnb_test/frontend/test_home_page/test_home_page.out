@@ -1,0 +1,57 @@
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input username: Please input password: Please input the password again: Registration succeeded
+Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+> Please input email: Please input password: Login successful
+Welcome, homepagetest.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Failed to create listing.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Leave the below field empty to return.
+Enter title of listing to edit: Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> After you have made your selection, if you enter "update selection" you will be able to return to selection page again
+Enter [1] to update email.
+Enter [2] to update username.
+Enter [3] to update billing address.
+Enter [4] to update postal code.
+Enter [end update] to leave.
+> Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Leave the below field empty to return.
+Enter title of listing to edit: Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to exit.
+> Welcome.
+Enter [1] to login.
+Enter [2] to register.
+Enter [3] to exit.
+>
