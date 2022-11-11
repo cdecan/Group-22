@@ -48,7 +48,7 @@ def test_R2():
     """
         R2 - Price can be only increased but cannot be decreased :)
 
-        This requirement is tested using input partition partitioning.
+        This requirement is tested using input partition testing.
 
         Order:
         Price is the same
