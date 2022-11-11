@@ -47,35 +47,35 @@
 │   │   │   │       └── test_login.out  
 │   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
 │   │   │   └── test_login.py  
-│   │   ├── test_register  
-│   │   │   ├── cases  
-│   │   │   │   ├── R1  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R10  
-│   │   │   │   │   └── test_register.in  
-│   │   │   │   ├── R2  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R3  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R4  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R5  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R6  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R7  
-│   │   │   │   │   ├── test_register.in  
-│   │   │   │   │   └── test_register.out  
-│   │   │   │   ├── R8  
-│   │   │   │   │   └── test_register.in  
-│   │   │   │   └── R9  
-│   │   │   │       └── test_register.in  
+│   │   ├── test_register            ======> Tests for the user register page
+│   │   │   ├── cases            ======> Cases pulled from A2 register function
+│   │   │   │   ├── R1          ======> Test R1-1: Email cannot be empty. password cannot be empty.
+│   │   │   │   │   ├── test_register.in          ======> Input for R1-1
+│   │   │   │   │   └── test_register.out            ======> Output for R1-1
+│   │   │   │   ├── R10            ======> Test R1-10: Balance should be initialized as 100 at the time of registration.
+│   │   │   │   │   └── test_register.in            ======> Input for R1-10
+│   │   │   │   ├── R2            ======> Test R1-2: A user is uniquely identified by his/her user id - automatically generated.
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-2
+│   │   │   │   │   └── test_register.out            ======> Output for R1-2
+│   │   │   │   ├── R3            ======> Test R1-3: The email has to follow addr-spec defined in RFC 5322
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-3
+│   │   │   │   │   └── test_register.out            ======> Output for R1-3
+│   │   │   │   ├── R4            ======> Test R1-4: Password has to meet the required complexity
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-4
+│   │   │   │   │   └── test_register.out            ======> Input for R1-4
+│   │   │   │   ├── R5            ======> Test R1-5: User name has to be non-empty, etc.
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-5
+│   │   │   │   │   └── test_register.out            ======> Output for R1-5
+│   │   │   │   ├── R6            ======> Test R1-6: User name has to be a certain length.
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-6
+│   │   │   │   │   └── test_register.out            ======> Output for R1-6
+│   │   │   │   ├── R7            ======> Test R1-7: If the email has been used, the operation failed
+│   │   │   │   │   ├── test_register.in            ======> Input for R1-7
+│   │   │   │   │   └── test_register.out            ======> Output for R1-7
+│   │   │   │   ├── R8            ======> Test R1-8: Shipping address is empty at the time of registration
+│   │   │   │   │   └── test_register.in            ======> Input for R1-8
+│   │   │   │   └── R9            ======> Test R1-9: Postal code is empty at the time of registration
+│   │   │   │       └── test_register.in            ======> Input for R1-9
 │   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
 │   │   │   └── test_register.py  
 │   │   ├── test_update_listing  
