@@ -2,7 +2,6 @@ from pathlib import Path
 import subprocess
 from qbnb.user import register
 from qbnb.listing import Listing
-import time
 
 
 register('TestUpdateListing', 'tul@test.com', 'Password1_')
