@@ -14,7 +14,7 @@ Lines `1` - `8` are boilerplate code - creating a user so we may create listings
 	- Input Boundary Testing
 	- Title is max 80 characters; test 80 & 81 characters long. Expect 80 to pass, 81 to fail.
 - **R4-3: Lines `17` - `24`**
-	- Output Parition Testing
+	- Output Partition Testing
 	- Output Partitions: Success, Failure.
 	- Test with description of valid length (20-2000 chars), then with description of invalid length (<20 chars).
 - **R4-4: Lines `41` - `52`**
@@ -33,6 +33,6 @@ Lines `1` - `8` are boilerplate code - creating a user so we may create listings
 	- Tested using direct back-end access (see `frontend/test_create_listing.py`)
 	- Ensure that owner_email is defined and valid upon creation
 - **R4-8:  Lines `53` - `60`**
-	- Output Parition Testing
+	- Output Partition Testing
 	- Output Partitions: Success, Failure.
 	- Attempt to create two listing with the same title; first should pass, second should fail.
