@@ -146,10 +146,10 @@ def update_listing(listing_id, new_id=None, new_title=None,
 
     # Updates the last modified date
     current_date = datetime.datetime.now()
-    lower_bound = datetime.datetime(2021, 1, 2)
-    upper_bound = datetime.datetime(2025, 1, 1, 23, 59, 59)
+    lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
+    upper_bound = datetime.datetime(2025, 1, 2)
     # Compares the current date with the required date range
-    if not (lower_bound <= current_date <= upper_bound):
+    if not (lower_bound < current_date < upper_bound):
         return False
         
     to_update.last_modified_date = current_date

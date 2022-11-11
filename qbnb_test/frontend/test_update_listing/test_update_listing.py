@@ -5,7 +5,7 @@ from qbnb.listing import Listing
 import time
 
 
-register('TestLoginUser', 'tlu@test.com', 'Password1_')
+register('TestUpdateListing', 'tul@test.com', 'Password1_')
 
 
 # get expected input/output file
@@ -88,9 +88,6 @@ def test_R3():
 
     to_check_original = Listing.query.filter_by(title='Listing5').first()
     previous_date = to_check_original.last_modified_date
-    print(previous_date)
-
-    time.sleep(5)
 
     # read expected in/out
     expected_in = open(current_folder.joinpath(
@@ -112,9 +109,8 @@ def test_R3():
 
     to_check_updated = Listing.query.filter_by(title='Listing5').first()
     updated_date = to_check_updated.last_modified_date
-    print(updated_date)
 
-    assert previous_date < updated_date
+    assert previous_date <= updated_date
 
 
 def test_R4():

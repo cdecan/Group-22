@@ -239,9 +239,9 @@ def test_r5_4_update_listing():
     # R4-6
     temp = Listing.query.filter_by(id=14).first()
     temp = temp.last_modified_date
-    lower_bound = datetime.datetime(2021, 1, 2)
-    upper_bound = datetime.datetime(2025, 1, 1, 23, 59, 59)
-    assert lower_bound <= temp <= upper_bound
+    lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
+    upper_bound = datetime.datetime(2025, 1, 2)
+    assert lower_bound < temp < upper_bound
 
     # R4-7
     assert update_listing(15, None, None, None, 25.00) is False
