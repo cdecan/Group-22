@@ -15,28 +15,28 @@
 │   ├── review.py        ======> Review model
 │   └── user.py          ======> User model
 ├── qbnb_test          ======> Testing code
-│   ├── backend  
-│   │   ├── __init__.py        ======> Required for a python module (can be empty)
-│   │   ├── test_listing.py        ======> Testing code for listing
-│   │   ├── test_models.py         ======> Unused
-│   │   ├── test_update_listing.py ======> Testing code for updating listing
-│   │   ├── test_update_user.py    ======> Testing code for updating user
-│   │   └── test_user.py           ======> Testing code for user
-│   ├── conftest.py        ======> Code to run before/after all the testing
-│   ├── frontend  
-│   │   ├── __init__.py        ======> Required for a python module (can be empty)
-│   │   ├── test_create_listing  
-│   │   │   ├── __init__.py          ======> Required for a python module (can be empty)
-│   │   │   ├── README.md  
-│   │   │   ├── test_create_listing.in  
-│   │   │   ├── test_create_listing.out  
-│   │   │   └── test_create_listing.py  
-│   │   ├── test_home_page  
-│   │   │   ├── __init__.py        ======> Required for a python module (can be empty)
-│   │   │   ├── README.md  
-│   │   │   ├── test_home_page.in  
-│   │   │   ├── test_home_page.out  
-│   │   │   └── test_home_page.py  
+│   ├── backend  
+│   │   ├── __init__.py            ======> Required for a python module (can be empty)
+│   │   ├── test_listing.py        ======> Testing code for listing
+│   │   ├── test_models.py         ======> Unused
+│   │   ├── test_update_listing.py ======> Testing code for updating listing
+│   │   ├── test_update_user.py    ======> Testing code for updating user
+│   │   └── test_user.py           ======> Testing code for user
+│   ├── conftest.py        ======> Code to run before/after all the testing
+│   ├── frontend  
+│   │   ├── __init__.py          ======> Required for a python module (can be empty)
+│   │   ├── test_create_listing  ======> All requirement tests for the Create Listing page
+│   │   │   ├── __init__.py              ======> Required for a python module (can be empty)
+│   │   │   ├── README.md                ======> Explanation for "create listing page" testing methodology
+│   │   │   ├── test_create_listing.in   ======> Series of inputs for testing all "create listing page" requirements
+│   │   │   ├── test_create_listing.out  ======> Expected output from all inputs
+│   │   │   └── test_create_listing.py   ======> Executes input/output verification create listing page
+│   │   ├── test_home_page       ======> All requirement tests for the User Home page
+│   │   │   ├── __init__.py              ======> Required for a python module (can be empty)
+│   │   │   ├── README.md                ======> Explanation for "home page" testing methodology
+│   │   │   ├── test_home_page.in        ======> Series of inputs for testing all "home page" requirements
+│   │   │   ├── test_home_page.out       ======> Expected output from all inputs
+│   │   │   └── test_home_page.py        ======> Executes input/output verification for home page
 │   │   ├── test_login  
 │   │   │   ├── cases  
 │   │   │   │   ├── R1  
