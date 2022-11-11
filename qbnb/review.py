@@ -19,7 +19,7 @@ class Review(db.Model):
     # Review body (max 1000 chars)
     review_body = db.Column(db.String(1000), unique=True, nullable=False)
     # Review date
-    review_date = db.Column(db.Date, unique=True, nullable=False)
+    review_date = db.Column(db.DateTime, unique=True, nullable=False)
 
     def __repr__(self):
         return f'Review {self.id}'

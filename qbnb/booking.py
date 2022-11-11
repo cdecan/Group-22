@@ -21,7 +21,7 @@ class Booking(db.Model):
     price = db.Column(db.Float,
                       db.ForeignKey('Listing.price'), nullable=False)
     # Booking date.
-    date = db.Column(db.Date, nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
         """Each booking will be represented by a unique ID"""

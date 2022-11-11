@@ -260,7 +260,7 @@ def update_listing_page(user_id: int):
             'Enter [3] to update Description.\n'
             'Enter [4] to update Price.\n'
             'Enter [5] to exit.\n'
-            '>').strip()
+            '> ').strip()
 
         if selection == '1':
             # Request new id from user (ensure int)
