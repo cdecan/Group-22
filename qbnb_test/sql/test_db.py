@@ -15,7 +15,7 @@ def test_title():
     injections in the title attribute of create_listing"""
     # make sure there are no errors thrown
     for line in test_lines:
-        create_listing(1, line, "a"*1999, 50.0)
+        create_listing(1, line, "a" * 1999, 50.0)
 
 
 def test_price():
@@ -23,4 +23,4 @@ def test_price():
     injections in the price attribute of create_listing"""
     # make sure there are no errors thrown
     for line in test_lines:
-        create_listing(1, "Title", "a"*1999, line)
+        create_listing(1, "Title", "a" * 1999, line)
