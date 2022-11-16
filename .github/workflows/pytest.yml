@@ -27,3 +27,4 @@ jobs:
         pytest qbnb_test/frontend/test_home_page/test_home_page.py
         pytest qbnb_test/frontend/test_register
         pytest qbnb_test/frontend/test_update_listing/
+        pytest qbnb_test/sql/test_db.py
