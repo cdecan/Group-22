@@ -2,15 +2,16 @@
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
-
+- test_name_password
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
-
+Wrote all test cases for both the variables.
 ### 3. any difficulties.
 
-
+- user name does not accept any input with "\n" in it, so had to change from .readlines() to .read().split("\n")
 ### 4. what is the plan for the days before the deadline.
 
+- Finish docker
 
 # Connor
 
