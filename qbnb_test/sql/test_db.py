@@ -13,8 +13,10 @@ def test_create_listing_owner_id():
     """
 
     # make sure there are no errors thrown
+    n = 1
     for line in test_lines:
         create_listing(line,
-                       'Listing1',
-                       'This is a description of Listing1',
+                       'Listing' + str(n),
+                       'This is a description of Listing' + str(n),
                        50.0)
+        n += 1
