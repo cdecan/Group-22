@@ -7,14 +7,27 @@ current_folder = Path(__file__).parent
 with open(current_folder.joinpath(
         'test.in')) as my_file:
     test_lines = my_file.readlines()
-print(test_lines)
 
 
-def test_name_password():
+def test_name():
+    """
+    testing injection for register function with name being different input
+    requires no input and returns nothing
+    """
     x = 0
     for line in test_lines:
         x += 1
-        email = "injection" + str(x) + "@email.com"
-        stripped = line.strip()
-        register(stripped, email, "Test123")
-        register("User", email, stripped)
+        email = f"injection_name{x}@email.com"
+        register(line.replace("\n", ""), email, "Test123_")
+
+
+def test_password():
+    """
+    testing injection for register function with password being different input
+    requires no input and returns nothing
+    """
+    x = 0
+    for line in test_lines:
+        x += 1
+        email = f"injection_password{x}@email.com"
+        register("User", email, line.replace("\n", ""))
