@@ -9,6 +9,9 @@ with open(current_folder.joinpath(
         'test.in')) as my_file:
     test_lines = my_file.read().split('\n')
 
+# Ensure there is at least one user (user ID 1 exists)
+register("Name", "sqlTestEmail@email.com", "Password1!")
+
 
 def test_create_listing_description():
     """
@@ -17,11 +20,17 @@ def test_create_listing_description():
 
     Passes if no exceptions are thrown.
     """
-    # Ensure there is at least one user (user ID 1 exists)
-    register('User', 'SQLListing1@email.com', 'Testing#100')
     # Attempt various injection attacks into description field
     x = 0
     for line in test_lines:
         create_listing(1, f'This is the listing title {x}',
                        line, 100)
         x += 1
+
+
+def test_title():
+    """A test to make sure that there are no
+    injections in the title attribute of create_listing"""
+    # make sure there are no errors thrown
+    for line in test_lines:
+        create_listing(1, line, "a" * 1999, 50.0)
