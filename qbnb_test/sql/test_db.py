@@ -7,7 +7,8 @@ current_folder = Path(__file__).parent
 with open(current_folder.joinpath(
         'test.in')) as my_file:
     test_lines = my_file.readlines()
-print(test_lines)
+
+register("Name", "email@email.com", "Password1!")
 
 
 def test_title():
