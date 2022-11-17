@@ -11,6 +11,7 @@ with open(current_folder.joinpath('test.in')) as my_file:
 # Ensure there is at least one user (user ID 1 exists)
 register("Name", "sqlTestEmail@email.com", "Password1!")
 
+
 def test_create_listing_owner_id():
     """A test to make sure that there are no injections
        in the owner_id attribute of create_listing()
