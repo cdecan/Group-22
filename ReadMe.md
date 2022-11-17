@@ -16,6 +16,10 @@
 │   └── user.py          ======> User model
 ├── qbnb_test          ======> Testing code
 │   ├── backend  
+│   │   ├── sql            ======> Tests from sprint 5, to make sure there are no code injections
+│   │   │   ├── __init__.py            ======> Required for a python module (can be empty)
+│   │   │   ├── test.in            ======> The inputs that try to make code injections
+│   │   │   ├── test_db.py            ======> test code that tests the variables of register and create_listing
 │   │   ├── __init__.py            ======> Required for a python module (can be empty)
 │   │   ├── test_listing.py        ======> Testing code for listing
 │   │   ├── test_models.py         ======> Unused
