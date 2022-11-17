@@ -21,9 +21,6 @@ jobs:
       run: |
         pip install pytest
         pytest qbnb_test/backend/test_listing.py qbnb_test/backend/test_user.py qbnb_test/backend/test_update_user.py qbnb_test/backend/test_update_listing.py
-        pytest qbnb_test/frontend/test_create_listing/test_create_listing.py
-        pytest qbnb_test/frontend/test_update_user_profile/test_update_user_profile.py
-        pytest qbnb_test/frontend/test_login/
-        pytest qbnb_test/frontend/test_home_page/test_home_page.py
-        pytest qbnb_test/frontend/test_register
-        pytest qbnb_test/frontend/test_update_listing/
+        pytest qbnb_test/frontend/test_update_listing
+        pytest qbnb_test/frontend/test_update_user_profile qbnb_test/frontend/test_register qbnb_test/frontend/test_login qbnb_test/frontend/test_create_listing qbnb_test/frontend/test_home_page
+        pytest qbnb_test/sql/test_db.py
