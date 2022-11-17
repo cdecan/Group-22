@@ -10,9 +10,11 @@ with open(current_folder.joinpath(
 print(test_lines)
 
 
-def test_title():
-    """A test to make sure that there are no
-    injections in the title attribute of create_listing"""
-    # make sure there are no errors thrown
+def test_name_password():
+    x = 0
     for line in test_lines:
-        create_listing(1, line, "a" * 1999, 50.0)
+        x += 1
+        email = "injection" + str(x) + "@email.com"
+        stripped = line.strip()
+        register(stripped, email, "Test123")
+        register("User", email, stripped)
