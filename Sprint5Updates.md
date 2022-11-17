@@ -37,16 +37,20 @@ Wrote all of the test cases for both of the variables by reading all the lines f
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
-
+- `sql_test_create_listing_owner_id_haiden`
+- `sql_test_register_email_haiden`
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
+- Wrote all of the test cases for both of the variables by reading all the lines from the input file.
 
 ### 3. any difficulties.
 
+- There cannot be more than one listing with the same title, which I did not account for at first when creating test cases.
 
 ### 4. what is the plan for the days before the deadline.
 
+- Finish docker
 
 # Kennan
 
