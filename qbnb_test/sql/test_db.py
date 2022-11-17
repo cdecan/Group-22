@@ -3,10 +3,8 @@ from pathlib import Path
 
 current_folder = Path(__file__).parent
 
-with open(current_folder.joinpath(
-        'test.in')) as my_file:
+with open(current_folder.joinpath('test.in')) as my_file:
     test_lines = my_file.readlines()
-print(test_lines)
 
 
 def test_register_email():
