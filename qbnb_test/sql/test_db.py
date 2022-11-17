@@ -7,7 +7,7 @@ current_folder = Path(__file__).parent
 # Read SQL-injection test lines from file
 with open(current_folder.joinpath(
         'test.in')) as my_file:
-    test_lines = my_file.readlines()
+    test_lines = my_file.read().split('\n')
 
 
 def test_create_listing_description():
@@ -22,6 +22,6 @@ def test_create_listing_description():
     # Attempt various injection attacks into description field
     x = 0
     for line in test_lines:
-        create_listing(1, f"This is the listing title {x}",
+        create_listing(1, f'This is the listing title {x}',
                        line, 100)
     x += 1
