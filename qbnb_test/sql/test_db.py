@@ -24,4 +24,4 @@ def test_create_listing_description():
     for line in test_lines:
         create_listing(1, f'This is the listing title {x}',
                        line, 100)
-    x += 1
+        x += 1
