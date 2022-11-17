@@ -6,7 +6,7 @@ current_folder = Path(__file__).parent
 
 with open(current_folder.joinpath(
         'test.in')) as my_file:
-    test_lines = my_file.readlines()
+    test_lines = my_file.read().split("\n")
 
 
 def test_name():
@@ -18,7 +18,7 @@ def test_name():
     for line in test_lines:
         x += 1
         email = f"injection_name{x}@email.com"
-        register(line.replace("\n", ""), email, "Test123_")
+        register(line, email, "Test123_")
 
 
 def test_password():
@@ -30,4 +30,4 @@ def test_password():
     for line in test_lines:
         x += 1
         email = f"injection_password{x}@email.com"
-        register("User", email, line.replace("\n", ""))
+        register("User", email, line)
