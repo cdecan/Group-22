@@ -16,7 +16,7 @@ def test_create_listing_owner_id():
     n = 1
     for line in test_lines:
         create_listing(line,
-                       'Listing' + str(n),
-                       'This is a description of Listing' + str(n),
+                       f'Listing{n}',
+                       f'This is a description of Listing{n}',
                        50.0)
         n += 1
