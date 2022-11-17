@@ -37,6 +37,8 @@ db.create_all()
 def create_listing(owner_id, title, description, price):
     # get the user posting the listing
     user = User.query.get(owner_id)
+    if not isinstance(price, (float, int)):
+        return False
     if not user:
         return False
     # check if user email exists
