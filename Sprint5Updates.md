@@ -1,0 +1,60 @@
+# Allen
+
+### 1. what is the branch he/she worked on (has to be pushed to the repo).
+
+
+### 2. what is the progress so far (at least some test cases written, more than 2)
+
+
+### 3. any difficulties.
+
+
+### 4. what is the plan for the days before the deadline.
+
+
+# Connor
+
+### 1. what is the branch he/she worked on (has to be pushed to the repo).
+
+`test_title`
+`test_price`
+
+### 2. what is the progress so far (at least some test cases written, more than 2)
+
+Wrote all of the test cases for both of the variables by reading all the lines from the file.
+
+### 3. any difficulties.
+
+- In create listing it did not check to make sure the price was a float so I had to change that
+
+### 4. what is the plan for the days before the deadline.
+
+- Create the docker stuff
+- Finish merging the remaining branches (as of writing this)
+
+# Haiden
+
+### 1. what is the branch he/she worked on (has to be pushed to the repo).
+
+
+
+### 2. what is the progress so far (at least some test cases written, more than 2)
+
+
+### 3. any difficulties.
+
+
+### 4. what is the plan for the days before the deadline.
+
+
+# Kennan
+
+### 1. what is the branch he/she worked on (has to be pushed to the repo).
+
+### 2. what is the progress so far (at least some test cases written, more than 2)
+
+### 3. any difficulties.
+
+### 4. what is the plan for the days before the deadline.
+
+![image](Sprint5ScrumBoard.png)
