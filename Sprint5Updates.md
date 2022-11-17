@@ -51,10 +51,19 @@ Wrote all of the test cases for both of the variables by reading all the lines f
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
+`Test_SQL_Create_Listing_Description`
+
 ### 2. what is the progress so far (at least some test cases written, more than 2)
+
+- Wrote all test cases for creating listing with SQL injections in description field (all tests have passed).
 
 ### 3. any difficulties.
 
+- Had some minor difficulties with newlines and reading the injection test file, fixed them by changing how we read the file. 
+
 ### 4. what is the plan for the days before the deadline.
+
+- Create the docker stuff
+- Finish merging the remaining branches (as of writing this)
 
 ![image](Sprint5ScrumBoard.png)
