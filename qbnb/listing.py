@@ -15,9 +15,9 @@ class Listing(db.Model):
     # each listing has a unique id
     id = db.Column(db.Integer, unique=True, primary_key=True)
     # each listing has a unique title
-    title = db.Column(db.String, unique=True, nullable=False)
+    title = db.Column(db.String(80), unique=True, nullable=False)
     # each listing has a description
-    description = db.Column(db.String, nullable=True)
+    description = db.Column(db.String(2000), nullable=True)
     # each listing has a price
     price = db.Column(db.Float, nullable=False)
     # each listing has a last modified date
@@ -50,7 +50,7 @@ def create_listing(owner_id, title, description, price):
     # check if title meets criteria:
     if len(title) < 1 or len(title) > 80:
         return False
-    if not all(letter.isalnum() or letter.isspace() for letter in title)\
+    if not all(letter.isalnum() or letter.isspace() for letter in title) \
             or title.endswith(' ') or title.startswith(' '):
         return False
     title_existed = Listing.query.filter_by(title=title).all()
@@ -153,7 +153,7 @@ def update_listing(listing_id, new_id=None, new_title=None,
     # Compares the current date with the required date range
     if not (lower_bound < current_date < upper_bound):
         return False
-        
+
     to_update.last_modified_date = current_date
 
     db.session.commit()
