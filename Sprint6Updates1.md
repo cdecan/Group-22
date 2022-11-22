@@ -1,18 +1,18 @@
 # Allen
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
-
+None yet, planning on creating one called "booking_frontend_testing"
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
-
+None yet
 
 
 ### 3. any difficulties.
-
+None yet
 
 
 ### 4. what is the plan for the days before the deadline.
-
+Wait for frontend development to finish then start working on frontend testing
 
 # Connor
 
