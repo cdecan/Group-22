@@ -89,6 +89,7 @@ def book_listing(booker_id, listing_id):
                       listing_id=listing_id,
                       price=my_price,
                       date=creation_date)
+
     # User pays for the listing
     user.balance -= my_price
 
