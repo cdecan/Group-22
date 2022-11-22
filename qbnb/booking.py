@@ -52,25 +52,30 @@ def book_listing(booker_id, listing_id):
     user = User.query.get(booker_id)
     if user is None:
         return False
+
     # Check if the listing id exists
     listing = Listing.query.get(listing_id)
     if listing is None:
         return False
+
     # The price of the booking is the price of the listing
     my_price = listing.price
 
     # Check that price is a float just in case
     if not isinstance(my_price, (float, int)):
         return False
+
     # The booking was created today
     creation_date = datetime.datetime.now()
 
     # A user cannot book a listing for his/her listing.
     if listing.owner_id == booker_id:
         return False
+
     # A user cannot book a listing that costs more than his/her balance.
     if my_price > user.balance:
         return False
+
     # A user cannot book a listing that is already
     # Booked with the overlapped dates.
     bookings_with_same_user = \
