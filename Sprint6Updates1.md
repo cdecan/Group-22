@@ -21,15 +21,19 @@ Wait for frontend development to finish then start working on frontend testing
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
+`booking_backend`
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
+created the book_listing function, need to finish it and merge it
 
 ### 3. any difficulties.
 
+not at the moment, but they may arise if a group member notices something on the pull request
 
 ### 4. what is the plan for the days before the deadline.
 
+finish the book_listing function, merge it, wait for the other components to finish, then deploy it all with docker
 
 # Haiden
 
