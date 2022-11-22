@@ -32,17 +32,27 @@ Wait for frontend development to finish then start working on frontend testing
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
 
+N/A
 
+Planned Branches:
+
+`backend_testing_haiden`
+
+`security_testing_haiden`
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
+- Created cards on scrum board
 
 ### 3. any difficulties.
 
+N/A
 
 ### 4. what is the plan for the days before the deadline.
 
-
+- Create backend test cases
+- Create security test cases
+- Attend second scrum meeting
 
 # Kennan
 
