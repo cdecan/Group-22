@@ -44,23 +44,28 @@ def book_listing(booker_id, listing_id):
         bool: Returns true if the booking was
               created successfully and false otherwise.
     """
+
     # check if the owner id exists
     user = User.query.get(booker_id)
+
     if user is None:
         return False
+
     # check if the listing id exists
     listing = Listing.query.get(listing_id)
+
     if listing is None:
         return False
+
     # the price of the booking is the price of the listing
     my_price = listing.price
+
     # check that price is a float just in case
     if not isinstance(my_price, (float, int)):
         return False
+
     # the booking was created today
     creation_date = datetime.datetime.now()
-
-    # requirements
 
     # A user cannot book a listing for his/her listing.
     if listing.owner_id == booker_id:
@@ -74,6 +79,7 @@ def book_listing(booker_id, listing_id):
     # booked with the overlapped dates.
     bookings_with_same_date = \
         Booking.query.filter_by(date=creation_date).all()
+
     for my_booking in bookings_with_same_date:
         if my_booking.user_id == booker_id:
             return False
