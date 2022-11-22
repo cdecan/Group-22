@@ -50,6 +50,29 @@ Planned Branches:
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
 - Created cards on scrum board
+- Created requirements
+
+### Requirements:
+
+r1: A user can book a listing.
+
+r2: A user cannot book a listing for his/her listing.
+
+r3: A user cannot book a listing that costs more than his/her balance.
+
+r4: A user cannot book a listing that is already booked with the overlapped dates.
+
+r5: A booked listing will show up on the user's home page.
+
+r6: User id exists in the database
+
+r7: Listing id exists in the database
+
+r8: Price has to be of range [10, 10000].
+
+r9: Date must be after 2021-01-02 and before 2025-01-02
+
+r10: User balance is correctly updated upon successful booking
 
 ### 3. any difficulties.
 
