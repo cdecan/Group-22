@@ -37,8 +37,8 @@ def book_listing(booker_id, listing_id):
     who wants to book listing with listing_id
 
     Args:
-        booker_id (int, None): ID of the user making the booking
-        listing_id (int, None): ID of the listing being booked
+        booker_id (int): ID of the user making the booking
+        listing_id (int): ID of the listing being booked
 
     Returns:
         bool: Returns true if the booking was
