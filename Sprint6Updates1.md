@@ -47,12 +47,16 @@ Wait for frontend development to finish then start working on frontend testing
 # Kennan
 
 ### 1. what is the branch he/she worked on (has to be pushed to the repo).
+None Yet; planning on creating `Make_Booking_Page` and `Bookings_On_Home_Page`.
+
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
+None Yet
 
 ### 3. any difficulties.
+None Yet
 
 ### 4. what is the plan for the days before the deadline.
-
+Wait for backend development to be completed, then begin working on the Create Booking Page. Once that is complete, begin working on the Display Bookings on Home Page functionality.
 
 ![image](Sprint6ScrumBoard1.png)
