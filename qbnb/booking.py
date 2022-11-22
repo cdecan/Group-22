@@ -64,7 +64,8 @@ def book_listing(booker_id, listing_id):
         if my_booking.user_id == booker_id:
             return False
 
-    booking = Booking(user_id=booker_id, listing_id=listing_id, price=my_price, date=creation_date)
+    booking = Booking(user_id=booker_id, listing_id=listing_id, price=my_price,
+                      date=creation_date)
     db.session.add(booking)
     db.session.commit()
     return True
