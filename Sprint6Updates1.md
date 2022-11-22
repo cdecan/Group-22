@@ -25,7 +25,7 @@ Wait for frontend development to finish then start working on frontend testing
 
 ### 2. what is the progress so far (at least some test cases written, more than 2)
 
-created the book_listing function, need to finish it and merge it
+created and assigned cards on the scrumboard, created the book_listing function, need to finish it and merge it
 
 ### 3. any difficulties.
 
