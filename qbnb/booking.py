@@ -32,6 +32,10 @@ class Booking(db.Model):
 
 
 def book_listing(booker_id, listing_id):
+    """
+    A function to create a booking for a user with id booker_id
+    who wants to book listing with listing_id
+    """
     # check if the owner id exists
     user = User.query.get(booker_id)
     if user is None:
@@ -58,14 +62,20 @@ def book_listing(booker_id, listing_id):
     if my_price > user.balance:
         return False
 
-    # A user cannot book a listing that is already booked with the overlapped dates.
-    bookings_with_same_date = Booking.query.filter_by(date=creation_date).all()
+    # A user cannot book a listing that is already
+    # booked with the overlapped dates.
+    bookings_with_same_date = \
+        Booking.query.filter_by(date=creation_date).all()
     for my_booking in bookings_with_same_date:
         if my_booking.user_id == booker_id:
             return False
 
-    booking = Booking(user_id=booker_id, listing_id=listing_id, price=my_price,
-                      date=creation_date)
+    booking = Booking(user_id=booker_id, listing_id=listing_id,
+                      price=my_price, date=creation_date)
+
+    # user pays for the listing
+    user.balance -= my_price
+
     db.session.add(booking)
     db.session.commit()
     return True
