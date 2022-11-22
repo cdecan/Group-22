@@ -35,6 +35,14 @@ def book_listing(booker_id, listing_id):
     """
     A function to create a booking for a user with id booker_id
     who wants to book listing with listing_id
+
+    Args:
+        booker_id (int, None): ID of the user making the booking
+        listing_id (int, None): ID of the listing being booked
+
+    Returns:
+        bool: Returns true if the booking was
+              created successfully and false otherwise.
     """
     # check if the owner id exists
     user = User.query.get(booker_id)
