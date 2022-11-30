@@ -134,6 +134,32 @@ def update_postal_code(user_id: int, new_postal_code: str):
     return True
 
 
+def update_balance(user_id: int, new_balance: float):
+    """
+    This function updates the balance
+    associated with this user.
+
+    Args:
+        user_id (int): The id of the associated user
+        new_balance (float): The updated balance
+
+    Returns:
+        boolean: Returns true if the balance is succesfully
+                 updated and false otherwise
+    """
+    # Find user to update
+    user = User.query.filter_by(id=user_id).first()
+    if user is None:
+        return False
+
+    # Update value and save to database
+    user.balance = new_balance
+    db.session.commit()
+
+    # Success
+    return True
+
+
 def register(name, email, password):
     """
     Register a new user, template is copied from models.py
