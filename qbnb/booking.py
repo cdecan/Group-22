@@ -70,10 +70,11 @@ def book_listing(booker_id, listing_id):
         return False
 
     # The date of the listing is between 2021-01-02 and 2025-01-02
+    current_date = datetime.datetime.now()
     lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
     upper_bound = datetime.datetime(2025, 1, 2)
     # Compares the current date with the required date range
-    if not (lower_bound < listing.last_modified_date < upper_bound):
+    if not (lower_bound < current_date < upper_bound):
         return False
 
     # The booking was created today
