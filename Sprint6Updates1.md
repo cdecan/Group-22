@@ -21,19 +21,19 @@ Wait for frontend development to finish then start working on frontend testing
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
 
-`booking_backend`
+`booking_backend` `booking_backend_bugfix`
 
 ### 2. What is the progress so far
 
-created and assigned cards on the scrumboard, created the book_listing function, need to finish it and merge it
+created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria
 
 ### 3. Any difficulties
 
-not at the moment, but they may arise if a group member notices something on the pull request
+Some of the requirements were misinterpreted and the booking had to be changed to fix them after we noticed
 
 ### 4. What is the plan for the days before the deadline.
 
-finish the book_listing function, merge it, wait for the other components to finish, then deploy it all with docker
+wait for the other components to finish and then deploy it all with docker
 
 # Haiden
 
