@@ -39,11 +39,9 @@ wait for the other components to finish and then deploy it all with docker
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
 
-N/A
-
-Planned Branches:
-
 `backend_testing_haiden`
+
+Planned Branch:
 
 `security_testing_haiden`
 
@@ -51,6 +49,7 @@ Planned Branches:
 
 - Created cards on scrum board
 - Created requirements
+- Created backend test cases for the `book_listing()` function
 
 **Requirements:**
 
@@ -67,11 +66,13 @@ Planned Branches:
 
 ### 3. Any difficulties
 
-N/A
+Getting error `sqlite3.OperationalError: database is locked` when running pytest.
+
+Error occurs when attempting to create a second booking.
 
 ### 4. What is the plan for the days before the deadline.
 
-- Create backend test cases
+- Fix error with backend testing
 - Create security test cases
 - Attend second scrum meeting
 
