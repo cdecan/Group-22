@@ -22,13 +22,16 @@ class Booking(db.Model):
     listing_id = db.Column(db.Integer, unique=True, nullable=False)
     # Listing price
     price = db.Column(db.Float,
-                      db.ForeignKey('Listing.price'), nullable=False)
+                      db.ForeignKey(Listing.price), nullable=False)
     # Booking date.
     date = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
         """Each booking will be represented by a unique ID"""
         return '<Booking %r>' % self.id
+
+
+db.create_all()
 
 
 def book_listing(booker_id, listing_id):
@@ -62,6 +65,18 @@ def book_listing(booker_id, listing_id):
     if not isinstance(my_price, (float, int)):
         return False
 
+    # The price of the listing is between 10 and 10000
+    if my_price < 10 or my_price > 10000:
+        return False
+
+    # The date of the listing is between 2021-01-02 and 2025-01-02
+    current_date = datetime.datetime.now()
+    lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
+    upper_bound = datetime.datetime(2025, 1, 2)
+    # Compares the current date with the required date range
+    if not (lower_bound < current_date < upper_bound):
+        return False
+
     # The booking was created today
     creation_date = datetime.datetime.now()
 
@@ -75,11 +90,11 @@ def book_listing(booker_id, listing_id):
 
     # A user cannot book a listing that is already
     # Booked with the overlapped dates.
-    bookings_with_same_date = \
-        Booking.query.filter_by(date=creation_date).all()
+    bookings_with_same_listing = \
+        Booking.query.filter_by(listing_id=listing_id).all()
 
-    for my_booking in bookings_with_same_date:
-        if my_booking.user_id == booker_id:
+    for my_booking in bookings_with_same_listing:
+        if my_booking.date.date() == datetime.date.today():
             return False
 
     booking = Booking(user_id=booker_id,
