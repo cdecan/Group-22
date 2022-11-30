@@ -17,7 +17,8 @@ Welcome, User1.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
-Enter [4] to exit.
+Enter [4] to make a booking.
+Enter [5] to exit.
 > After you have made your selection, if you enter "update selection" you will be able to return to selection page again
 Enter [1] to update email.
 Enter [2] to update username.
@@ -119,7 +120,8 @@ Enter [end update] to leave.
 > Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
-Enter [4] to exit.
+Enter [4] to make a booking.
+Enter [5] to exit.
 > Welcome.
 Enter [1] to login.
 Enter [2] to register.
