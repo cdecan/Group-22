@@ -78,7 +78,6 @@ def book_listing(booker_id, listing_id):
 
     # A user cannot book a listing that is already
     # Booked with the overlapped dates.
-    creation_date.date()
     bookings_with_same_listing = \
         Booking.query.filter_by(listing_id=listing_id).all()
 
