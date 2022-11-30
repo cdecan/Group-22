@@ -58,6 +58,10 @@ def book_listing(booker_id, listing_id):
     if listing is None:
         return False
 
+    # The price of the listing is between 10 and 10000
+    if listing.price < 10 or listing.price > 10000:
+        return False
+
     # The price of the booking is the price of the listing
     my_price = listing.price
 
