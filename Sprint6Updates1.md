@@ -1,49 +1,47 @@
-# Update Report Made: Nov.21.2022
+# Update Report Made: Nov.29.2022
 ---
 
 # Allen
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
-None yet, planning on creating one called "booking_frontend_testing"
+test_booking_frontend
 
 ### 2. What is the progress so far
-None yet
+made the files and the function, waiting for frontend development to start writing any test cases
 
 
 ### 3. Any difficulties
-None yet
+N/A
 
 
 ### 4. What is the plan for the days before the deadline.
-Wait for frontend development to finish then start working on frontend testing
+Write the test cases
 
 # Connor
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
 
-`booking_backend`
+`booking_backend` `booking_backend_bugfix`
 
 ### 2. What is the progress so far
 
-created and assigned cards on the scrumboard, created the book_listing function, need to finish it and merge it
+created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria
 
 ### 3. Any difficulties
 
-not at the moment, but they may arise if a group member notices something on the pull request
+Some of the requirements were misinterpreted and the booking had to be changed to fix them after we noticed
 
 ### 4. What is the plan for the days before the deadline.
 
-finish the book_listing function, merge it, wait for the other components to finish, then deploy it all with docker
+wait for the other components to finish and then deploy it all with docker
 
 # Haiden
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
 
-N/A
-
-Planned Branches:
-
 `backend_testing_haiden`
+
+Planned Branch:
 
 `security_testing_haiden`
 
@@ -51,6 +49,7 @@ Planned Branches:
 
 - Created cards on scrum board
 - Created requirements
+- Created backend test cases for the `book_listing()` function
 
 **Requirements:**
 
@@ -67,29 +66,33 @@ Planned Branches:
 
 ### 3. Any difficulties
 
-N/A
+Getting error `sqlite3.OperationalError: database is locked` when running pytest.
+
+Error occurs when attempting to create a second booking.
 
 ### 4. What is the plan for the days before the deadline.
 
-- Create backend test cases
+- Fix error with backend testing
 - Create security test cases
 - Attend second scrum meeting
 
 # Kennan
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
-None Yet; planning on creating `Make_Booking_Page` and `Bookings_On_Home_Page`.
-
+`Make_Booking_Page`
 
 ### 2. What is the progress so far
 - Created and assigned cards on scrum board
+- Make booking page has been created and is accessible through the user home page. Adjusted frontend tests to pass.
 
 ### 3. Any difficulties
-None Yet
+- An exception is thrown when attempting to book a listing - a bug fix for the backend is in the works (`booking_backend_bugfix` branch).
 
 ### 4. What is the plan for the days before the deadline.
-1. Wait for backend development to be completed
-2. Begin working on the Create Booking Page
-3. Begin working on the Display Bookings on Home Page functionality
+1. Pull bugfixes from main once they're merged
+2. Update existing code as nessesary until booking page works
+3. Create PR for `Make_Booking_Page` branch
+4. Start work on "home page displays current bookings" feature (#105)
+5. Review any other PRs
 
 ![image](Sprint6ScrumBoard1.png)
