@@ -155,7 +155,7 @@ def update_balance(user_id: int, new_balance: float):
     # Update value and save to database
     user.balance = new_balance
     db.session.commit()
-    
+
     # Success
     return True
 
