@@ -1,4 +1,4 @@
-# Update Report Made: Nov.21.2022
+# Update Report Made: Nov.29.2022
 ---
 
 # Allen
@@ -79,18 +79,20 @@ Error occurs when attempting to create a second booking.
 # Kennan
 
 ### 1. What is the branch he/she worked on (has to be pushed to the repo)
-None Yet; planning on creating `Make_Booking_Page` and `Bookings_On_Home_Page`.
-
+`Make_Booking_Page`
 
 ### 2. What is the progress so far
 - Created and assigned cards on scrum board
+- Make booking page has been created and is accessible through the user home page. Adjusted frontend tests to pass.
 
 ### 3. Any difficulties
-None Yet
+- An exception is thrown when attempting to book a listing - a bug fix for the backend is in the works (`booking_backend_bugfix` branch).
 
 ### 4. What is the plan for the days before the deadline.
-1. Wait for backend development to be completed
-2. Begin working on the Create Booking Page
-3. Begin working on the Display Bookings on Home Page functionality
+1. Pull bugfixes from main once they're merged
+2. Update existing code as nessesary until booking page works
+3. Create PR for `Make_Booking_Page` branch
+4. Start work on "home page displays current bookings" feature (#105)
+5. Review any other PRs
 
 ![image](Sprint6ScrumBoard1.png)
