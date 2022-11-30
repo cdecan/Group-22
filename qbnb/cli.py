@@ -354,7 +354,7 @@ def make_booking_page(user_id: int):
     # Attempt to create booking
     success = book_listing(user_id, to_book.id)
     if (success):
-        print("Successfully booked listing.")
+        print(f'Successfully booked listing \'{to_book.title}\'.')
     else:
-        print("Unable to book listing.")
+        print(f'Unable to book listing \'{to_book.title}\'.')
     return success
