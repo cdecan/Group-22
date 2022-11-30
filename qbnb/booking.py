@@ -58,15 +58,22 @@ def book_listing(booker_id, listing_id):
     if listing is None:
         return False
 
-    # The price of the listing is between 10 and 10000
-    if listing.price < 10 or listing.price > 10000:
-        return False
-
     # The price of the booking is the price of the listing
     my_price = listing.price
 
     # Check that price is a float just in case
     if not isinstance(my_price, (float, int)):
+        return False
+
+    # The price of the listing is between 10 and 10000
+    if my_price < 10 or my_price > 10000:
+        return False
+
+    # The date of the listing is between 2021-01-02 and 2025-01-02
+    lower_bound = datetime.datetime(2021, 1, 2, 23, 59, 59)
+    upper_bound = datetime.datetime(2025, 1, 2)
+    # Compares the current date with the required date range
+    if not (lower_bound < listing.last_modified_date < upper_bound):
         return False
 
     # The booking was created today
