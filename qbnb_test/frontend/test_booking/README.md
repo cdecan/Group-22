@@ -9,7 +9,7 @@ I also tested for input partitioning, there were only three different types: nam
 name does not exist and invalid.
 
 As of specific requirements, **R1** is on **line 38** of the .in file, **R2** was tested on **line 32**,
-**R3** is on **line 49**, I also tested if a listing costs more than current balance but less than initial balance on **
-line 42**, and finally **R4** is tested on **lines 40 and line 57**.
+**R3** is on **line 49**, I also tested if a listing costs more than current balance but less than initial balance on 
+**line 42**, and finally **R4** is tested on **lines 40 and line 57**.
 
 The first 30ish lines are for initializing the database so there are valid listings and users in there.
