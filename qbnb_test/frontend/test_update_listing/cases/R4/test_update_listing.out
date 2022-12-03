@@ -7,12 +7,14 @@ Welcome, TestUpdateListing.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
-Enter [4] to exit.
+Enter [4] to make a booking.
+Enter [5] to exit.
 > Enter listing title: Enter listing description: Enter listing price: $Listing "Listing6" was created successfully.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
-Enter [4] to exit.
+Enter [4] to make a booking.
+Enter [5] to exit.
 > Leave the below field empty to return.
 Enter title of listing to edit: Now editing "<Listing 'Listing5'>"
 Enter [1] to update Listing ID.
