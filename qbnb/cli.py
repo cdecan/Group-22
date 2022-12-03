@@ -1,5 +1,6 @@
 from qbnb.listing import create_listing, Listing, update_listing
 from qbnb.user import *
+from qbnb.booking import *
 
 
 def user_login_page():
@@ -79,7 +80,8 @@ def home_page(user_id: int):
             'Enter [1] to create a listing.\n'
             'Enter [2] to update a listing.\n'
             'Enter [3] to update your profile.\n'
-            'Enter [4] to exit.\n'
+            'Enter [4] to make a booking.\n'
+            'Enter [5] to exit.\n'
             '> ').strip()
         # Check input
         if selection == '1':
@@ -92,6 +94,9 @@ def home_page(user_id: int):
             # Update profile
             user_profile_update_page(user_id)
         elif selection == '4':
+            # Make booking
+            make_booking_page(user_id)
+        elif selection == '5':
             # Exit
             break
 
@@ -316,3 +321,40 @@ def update_listing_page(user_id: int):
 
         elif selection == '5':
             break
+
+
+def make_booking_page(user_id: int):
+    """
+    A page which allows the given user to book a listing
+
+    Parameters:
+        user_id (int): The unique ID of the booking user
+
+    Returns:
+        bool: True if booking created successfully, False otherwise.
+    """
+    # Print greeting
+    print('Leave the below field empty to return.')
+    found = False
+    while not found:
+        # Request listing title from user
+        find_title = input('Enter title of listing to book: ')
+
+        # Exit if blank title was given
+        if find_title == '':
+            return False
+
+        # Find the listing
+        to_book = Listing.query.filter_by(title=find_title).first()
+        if to_book is None:
+            print('(No listing found with that title)')
+        else:
+            found = True
+
+    # Attempt to create booking
+    success = book_listing(user_id, to_book.id)
+    if (success):
+        print(f'Successfully booked listing \'{to_book.title}\'.')
+    else:
+        print(f'Unable to book listing \'{to_book.title}\'.')
+    return success
