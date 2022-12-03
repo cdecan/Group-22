@@ -1,6 +1,6 @@
 name: Pytest-All
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
@@ -8,19 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest qbnb_test/backend/test_listing.py qbnb_test/backend/test_user.py qbnb_test/backend/test_update_user.py qbnb_test/backend/test_update_listing.py
-        pytest qbnb_test/frontend/test_update_listing
-        pytest qbnb_test/frontend/test_update_user_profile qbnb_test/frontend/test_register qbnb_test/frontend/test_login qbnb_test/frontend/test_create_listing qbnb_test/frontend/test_home_page
-        pytest qbnb_test/backend/sql/test_db.py
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pytest qbnb_test/backend/test_listing.py qbnb_test/backend/test_user.py qbnb_test/backend/test_update_user.py qbnb_test/backend/test_update_listing.py
+          pytest qbnb_test/frontend/test_update_listing
+          pytest qbnb_test/frontend/test_update_user_profile qbnb_test/frontend/test_register qbnb_test/frontend/test_login qbnb_test/frontend/test_create_listing qbnb_test/frontend/test_home_page qbnb_test/frontend/test_booking
+          pytest qbnb_test/backend/sql/test_db.py

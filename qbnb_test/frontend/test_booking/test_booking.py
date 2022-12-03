@@ -7,6 +7,7 @@ from datetime import datetime
 
 def test_booking():
     """
+    covering the 4 requirements on frontend testing
     """
     # get expected input/output file
     current_folder = Path(__file__).parent
