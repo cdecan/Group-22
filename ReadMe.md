@@ -119,5 +119,9 @@
 ├── Sprint6ScrumBoard1.png
 ├── Sprint6ScrumBoard2.png
 ├── Sprint6Updates1.png
-└── Sprint6Updates2.md
+├── Sprint6Updates2.md
+├── db_init.sql
+├── docker-compose.yml
+├── requirements.txt
+└── wait-for-it.sh
 ```
