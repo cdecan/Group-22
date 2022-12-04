@@ -10,8 +10,8 @@ from qbnb import app
 
 db = SQLAlchemy(app)
 
-for i in range(5):
-    register(f"User{i + 1}", f"user{i + 1}@gmail.com", f"Password{i + 1}_")
+for i in range(1, 6):
+    register(f"User{i}", f"user{i}@gmail.com", f"Password{i}_")
 
 create_listing(1,
                "listing 1",
