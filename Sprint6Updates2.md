@@ -24,7 +24,7 @@ N/A
 
 ### 2. What is the progress so far
 
-created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria
+created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria, merged other pull requests.
 
 ### 3. Any difficulties
 
@@ -32,7 +32,7 @@ Some of the requirements were misinterpreted and the booking had to be changed t
 
 ### 4. What is the plan for the days before the deadline.
 
-wait for the other components to finish and then deploy it all with docker
+Wait for the other components to finish and then deploy it all with docker. Waiting until sprint 5 grades have returned so that we know we did it correctly last time.
 
 # Haiden
 
