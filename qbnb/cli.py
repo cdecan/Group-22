@@ -66,7 +66,8 @@ def register_page():
 def home_page(user_id: int):
     """
     Displays the home page. Gives the user the option to access the listing
-    creation, listing update, and profile update pages.
+    creation, listing update, and profile update pages. Displays any listings
+    the user has booked.
 
     Parameters:
         user_id (int): The unique ID of the calling user
@@ -74,8 +75,19 @@ def home_page(user_id: int):
     Returns:
         None
     """
-    # Prompt user for user
+    # Main menu loop
     while True:
+        # Show existing bookings (if any exist)
+        bookings = Booking.query.filter_by(user_id=user_id).all()
+        if (len(bookings) > 0):
+            # Generate list of booked listings
+            listings = (Listing.query.filter_by(id=bkng.listing_id).first()
+                        for bkng in bookings)
+            # Compose string of listing titles
+            name_list = ', '.join((lst.title for lst in listings))
+            print(f'Current Bookings: {name_list}')
+
+        # Prompt user for user
         selection = input(
             'Enter [1] to create a listing.\n'
             'Enter [2] to update a listing.\n'
