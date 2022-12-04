@@ -7,15 +7,14 @@
 test_booking_frontend
 
 ### 2. What is the progress so far
-made the files and the function, waiting for frontend development to start writing any test cases
-
+Finished all testing and merged the branch already
 
 ### 3. Any difficulties
-N/A
+There was a few bugs that had to be fixed
 
 
 ### 4. What is the plan for the days before the deadline.
-Write the test cases
+N/A
 
 # Connor
 
