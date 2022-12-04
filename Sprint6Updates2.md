@@ -40,8 +40,6 @@ Wait for the other components to finish and then deploy it all with docker. Wait
 
 `backend_testing_haiden`
 
-Planned Branch:
-
 `security_testing_haiden`
 
 ### 2. What is the progress so far
@@ -49,6 +47,7 @@ Planned Branch:
 - Created cards on scrum board
 - Created requirements
 - Created backend test cases for the `book_listing()` function
+- Created database security test cases for the `book_listing()` function
 
 **Requirements:**
 
@@ -69,11 +68,11 @@ Getting error `sqlite3.OperationalError: database is locked` when running pytest
 
 Error occurs when attempting to create a second booking.
 
+#### The above difficulties have now been resolved.
+
 ### 4. What is the plan for the days before the deadline.
 
-- Fix error with backend testing
-- Create security test cases
-- Attend second scrum meeting
+- Review remaining pull requests.
 
 # Kennan
 
