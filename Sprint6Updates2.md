@@ -24,7 +24,7 @@ N/A
 
 ### 2. What is the progress so far
 
-created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria, merged other pull requests.
+created and assigned cards on the scrumboard, created the book_listing function, made changes so that it fits the criteria, merged other pull requests, updated readme.
 
 ### 3. Any difficulties
 
