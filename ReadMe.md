@@ -25,6 +25,7 @@
 │   │   ├── test_models.py         ======> Unused
 │   │   ├── test_update_listing.py ======> Testing code for updating listing
 │   │   ├── test_update_user.py    ======> Testing code for updating user
+│   │   ├── test_booking.py    ======> Testing code for booking a listing
 │   │   └── test_user.py           ======> Testing code for user
 │   ├── conftest.py        ======> Code to run before/after all the testing
 │   ├── frontend  
@@ -41,6 +42,12 @@
 │   │   │   ├── test_home_page.in        ======> Series of inputs for testing all "home page" requirements
 │   │   │   ├── test_home_page.out       ======> Expected output from all inputs
 │   │   │   └── test_home_page.py        ======> Executes input/output verification for home page
+│   │   ├── test_booking       ======> All requirement tests for the booking
+│   │   │   ├── __init__.py              ======> Required for a python module (can be empty)
+│   │   │   ├── README.md                ======> Explanation for "booking" testing methodology
+│   │   │   ├── test_home_page.in        ======> Series of inputs for testing all "booking" requirements
+│   │   │   ├── test_home_page.out       ======> Expected output from all inputs
+│   │   │   └── test_home_page.py        ======> Executes input/output verification for booking
 │   │   ├── test_login    ======> This directory contains all the code to test the frontend of the login function.
 │   │   │   ├── cases
 │   │   │   │   ├── R1    ======> This directory contains all the input cases and expected outputs for test_R1() in test_login.py
@@ -105,6 +112,12 @@
 │   │       └── test_update_user_profile.py  
 │   ├── __init__.py        ======> Required for a python module (can be empty)
 ├── requirements.txt  
-├── Sprint4ScrumBoard.png  
-└── Sprint4Updates.md  
+├── Sprint4ScrumBoard.png
+├── Sprint4Updates.png
+├── Sprint5ScrumBoard.png
+├── Sprint5Updates.png
+├── Sprint6ScrumBoard1.png
+├── Sprint6ScrumBoard2.png
+├── Sprint6Updates1.png
+└── Sprint6Updates2.md
 ```
