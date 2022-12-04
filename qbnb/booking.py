@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from qbnb import app
 from qbnb.user import User
+from qbnb.user import update_balance
 from qbnb.listing import Listing
 import datetime
 
@@ -17,9 +18,9 @@ class Booking(db.Model):
     # Booking ID
     id = db.Column(db.Integer, unique=True, primary_key=True)
     # ID of the user making the booking.
-    user_id = db.Column(db.Integer, unique=True, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
     # ID of the listing to be booked.
-    listing_id = db.Column(db.Integer, unique=True, nullable=False)
+    listing_id = db.Column(db.Integer, nullable=False)
     # Listing price
     price = db.Column(db.Float,
                       db.ForeignKey(Listing.price), nullable=False)
@@ -103,7 +104,8 @@ def book_listing(booker_id, listing_id):
                       date=creation_date)
 
     # User pays for the listing
-    user.balance -= my_price
+    new_balance = user.balance - my_price
+    update_balance(booker_id, new_balance)
 
     db.session.add(booking)
     db.session.commit()
