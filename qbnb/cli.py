@@ -85,7 +85,7 @@ def home_page(user_id: int):
                         for bkng in bookings)
             # Compose string of listing titles
             name_list = ', '.join((lst.title for lst in listings))
-            print(f'Current Bookings: {name_list}')
+            print(f'Current Bookings: {name_list}.')
 
         # Prompt user for user
         selection = input(
