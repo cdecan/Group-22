@@ -42,6 +42,12 @@ Enter [2] to update a listing.
 Enter [3] to update your profile.
 Enter [4] to make a booking.
 Enter [5] to exit.
+> Enter listing title: Enter listing description: Enter listing price: $Listing "ValidListing4" was created successfully.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to make a booking.
+Enter [5] to exit.
 > Leave the below field empty to return.
 Enter title of listing to book: Unable to book listing 'ValidListing1'.
 Enter [1] to create a listing.
@@ -62,6 +68,7 @@ Enter [4] to make a booking.
 Enter [5] to exit.
 > Leave the below field empty to return.
 Enter title of listing to book: Successfully booked listing 'ValidListing2'.
+Current Bookings: ValidListing2.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
@@ -69,6 +76,7 @@ Enter [4] to make a booking.
 Enter [5] to exit.
 > Leave the below field empty to return.
 Enter title of listing to book: Unable to book listing 'ValidListing2'.
+Current Bookings: ValidListing2.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
@@ -76,6 +84,15 @@ Enter [4] to make a booking.
 Enter [5] to exit.
 > Leave the below field empty to return.
 Enter title of listing to book: Unable to book listing 'ValidListing1'.
+Current Bookings: ValidListing2.
+Enter [1] to create a listing.
+Enter [2] to update a listing.
+Enter [3] to update your profile.
+Enter [4] to make a booking.
+Enter [5] to exit.
+> Leave the below field empty to return.
+Enter title of listing to book: Successfully booked listing 'ValidListing4'.
+Current Bookings: ValidListing2, ValidListing4.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
@@ -88,13 +105,15 @@ Enter title of listing to book: (No listing found with that title)
 Enter title of listing to book: (No listing found with that title)
 Enter title of listing to book: (No listing found with that title)
 Enter title of listing to book: Unable to book listing 'ValidListing3'.
+Current Bookings: ValidListing2, ValidListing4.
 Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
 Enter [4] to make a booking.
 Enter [5] to exit.
 > Leave the below field empty to return.
-Enter title of listing to book: Enter [1] to create a listing.
+Enter title of listing to book: Current Bookings: ValidListing2, ValidListing4.
+Enter [1] to create a listing.
 Enter [2] to update a listing.
 Enter [3] to update your profile.
 Enter [4] to make a booking.
