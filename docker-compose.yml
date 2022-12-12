@@ -1,7 +1,7 @@
 version: "2"
 services:
   qbnb-cli:
-    image: sllama/qbnb_group22:v2
+    image: sllama/qbnb_group22:v3
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     depends_on:
